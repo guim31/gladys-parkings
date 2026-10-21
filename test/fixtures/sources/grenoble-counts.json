@@ -1,0 +1,499 @@
+{
+  "38006-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38039-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38059-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38133-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38140-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38150-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38151-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 76,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 76,
+    "nsv_id": 1
+  },
+  "38158-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 10,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 10,
+    "nsv_id": 1
+  },
+  "38170-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 133,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 133,
+    "nsv_id": 1
+  },
+  "38179-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 95,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 95,
+    "nsv_id": 1
+  },
+  "38181-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38185-P-001": {
+    "time": 1792593040256,
+    "nb_places_libres": 248,
+    "nb_parking_libres": 248,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-002": {
+    "time": 1792593040256,
+    "nb_places_libres": 89,
+    "nb_parking_libres": 89,
+    "nb_pr_libres": 0,
+    "nsv_id": 2
+  },
+  "38185-P-003": {
+    "time": 1792593040256,
+    "nb_places_libres": 365,
+    "nb_parking_libres": 365,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-004": {
+    "time": 1792593040256,
+    "nb_places_libres": 126,
+    "nb_parking_libres": 126,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-005": {
+    "time": 1792593040256,
+    "nb_places_libres": 99,
+    "nb_parking_libres": 99,
+    "nb_pr_libres": 0,
+    "nsv_id": 2
+  },
+  "38185-P-006": {
+    "time": 1792593040256,
+    "nb_places_libres": 0,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 0,
+    "nsv_id": 3
+  },
+  "38185-P-007": {
+    "time": 1792593040256,
+    "nb_places_libres": 110,
+    "nb_parking_libres": 110,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-008": {
+    "time": 1792593040256,
+    "nb_places_libres": 46,
+    "nb_parking_libres": 46,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-009": {
+    "time": 1792593024000,
+    "nb_places_libres": 303,
+    "nb_parking_libres": 303,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-010": {
+    "time": 1792593040256,
+    "nb_places_libres": 208,
+    "nb_parking_libres": 208,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-011": {
+    "time": 1792592940000,
+    "nb_places_libres": 210,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 210,
+    "nsv_id": 1
+  },
+  "38185-P-012": {
+    "time": 1792593040256,
+    "nb_places_libres": 123,
+    "nb_parking_libres": 123,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-013": {
+    "time": 1792593040256,
+    "nb_places_libres": 304,
+    "nb_parking_libres": 304,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-014": {
+    "time": 1792593040256,
+    "nb_places_libres": 296,
+    "nb_parking_libres": 296,
+    "nb_pr_libres": 0,
+    "nsv_id": 1
+  },
+  "38185-P-015": {
+    "time": 1792593040256,
+    "nb_places_libres": 23,
+    "nb_parking_libres": 23,
+    "nb_pr_libres": 0,
+    "nsv_id": 2
+  },
+  "38185-P-016": {
+    "time": 1792593040256,
+    "nb_places_libres": 0,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 0,
+    "nsv_id": 3
+  },
+  "38185-P-017": {
+    "time": 1792592940000,
+    "nb_places_libres": 76,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 76,
+    "nsv_id": 1
+  },
+  "38214-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38229-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38249-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38314-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38317-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 34,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 34,
+    "nsv_id": 1
+  },
+  "38317-P-002": {
+    "time": 1792592940000,
+    "nb_places_libres": 42,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 42,
+    "nsv_id": 1
+  },
+  "38317-P-003": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38337-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38382-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38382-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38382-P-003": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38422-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38431-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38474-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38474-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38485-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 16,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 16,
+    "nsv_id": 1
+  },
+  "38486-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 66,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 66,
+    "nsv_id": 1
+  },
+  "38504-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38516-P-001": {
+    "time": 1792592940000,
+    "nb_places_libres": 8,
+    "nb_parking_libres": 0,
+    "nb_pr_libres": 8,
+    "nsv_id": 3
+  },
+  "38545-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38545-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38200-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38388-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38547-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38547-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38524-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38562-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38511-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38337-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38331-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38084-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38563-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38563-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38563-P-003": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38133-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38061-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38239-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38239-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38565-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38517-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38397-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38562-P-002": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  },
+  "38062-P-001": {
+    "time": 1792593055014,
+    "nb_places_libres": null,
+    "nb_parking_libres": null,
+    "nb_pr_libres": null,
+    "nsv_id": 0
+  }
+}

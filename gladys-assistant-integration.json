@@ -1,177 +1,855 @@
 {
   "manifest_version": 1,
   "type": "device",
-  "name": "Demo Devices Template",
+  "name": "Parkings en temps réel",
   "description": {
-    "en": "Starter template showing sensors, a switch, a dimmable light and a smart plug.",
-    "fr": "Template de démarrage : capteurs, interrupteur, lampe variable et prise connectée."
+    "en": "Free spaces of public car parks in French cities (open data): Strasbourg, Bordeaux, Nantes…",
+    "fr": "Places libres des parkings publics de villes françaises (open data) : Strasbourg, Bordeaux, Nantes…",
+    "de": "Freie Plätze öffentlicher Parkhäuser französischer Städte (Open Data): Straßburg, Bordeaux…",
+    "es": "Plazas libres de aparcamientos públicos de ciudades francesas (datos abiertos): Estrasburgo…"
   },
   "version": "1.0.0",
-  "docker_image": "ghcr.io/gladysassistant/integration-template-js:1.0.0",
+  "docker_image": "ghcr.io/guim31/gladys-parkings:1.0.0",
   "gladys_version": ">=5.1.0",
-  "cover_image": "https://raw.githubusercontent.com/GladysAssistant/integration-template-js/master/cover.png",
-  "categories": ["lighting", "security", "environment"],
-  "transports": ["local", "cloud"],
+  "cover_image": "https://raw.githubusercontent.com/guim31/gladys-parkings/main/cover.png",
+  "categories": ["services"],
+  "transports": ["cloud"],
   "config_schema": [
     {
       "key": "intro",
       "type": "section",
-      "label": { "en": "Getting started", "fr": "Pour commencer" },
+      "label": {
+        "en": "How it works",
+        "fr": "Fonctionnement",
+        "de": "So funktioniert es",
+        "es": "Funcionamiento"
+      },
       "description": {
-        "en": "The demo weather station reads real data from the free Open-Meteo API: pick the coordinates to observe. No account, no API key.",
-        "fr": "La station météo de démonstration lit de vraies données via l'API gratuite Open-Meteo : choisissez les coordonnées à observer. Pas de compte, pas de clé d'API."
+        "en": "Tick your cities and save: their car parks with a live count appear in the Discover tab. Add the ones you want to Gladys. No account, no key.",
+        "fr": "Cochez vos villes et enregistrez : leurs parkings à comptage en direct apparaissent dans l'onglet Découverte. Ajoutez ceux qui vous intéressent à Gladys. Sans compte ni clé.",
+        "de": "Kreuze deine Städte an und speichere: ihre Parkhäuser mit Live-Zählung erscheinen im Tab „Entdecken“. Füge die gewünschten zu Gladys hinzu. Kein Konto, kein Schlüssel.",
+        "es": "Marque sus ciudades y guarde: sus aparcamientos con recuento en directo aparecen en la pestaña Descubrir. Añada a Gladys los que le interesen. Sin cuenta ni clave."
       },
       "links": [
         {
-          "url": "https://open-meteo.com/en/docs",
-          "label": { "en": "Open-Meteo documentation", "fr": "Documentation Open-Meteo" }
+          "url": "https://github.com/guim31/gladys-parkings/blob/main/docs/en.md",
+          "label": {
+            "en": "Setup guide",
+            "fr": "Guide de configuration",
+            "de": "Einrichtungsanleitung",
+            "es": "Guía de configuración"
+          }
         }
       ]
     },
     {
-      "key": "latitude",
-      "type": "number",
-      "label": { "en": "Latitude", "fr": "Latitude" },
-      "description": {
-        "en": "Latitude used for the demo weather sensor.",
-        "fr": "Latitude utilisée par le capteur météo de démonstration."
+      "key": "cities",
+      "type": "multi_select",
+      "label": {
+        "en": "Cities",
+        "fr": "Villes",
+        "de": "Städte",
+        "es": "Ciudades"
       },
-      "placeholder": { "en": "e.g. 48.8566", "fr": "ex. 48.8566" },
-      "required": true,
-      "default": 48.8566,
-      "min": -90,
-      "max": 90
-    },
-    {
-      "key": "longitude",
-      "type": "number",
-      "label": { "en": "Longitude", "fr": "Longitude" },
       "description": {
-        "en": "Longitude used for the demo weather sensor.",
-        "fr": "Longitude utilisée par le capteur météo de démonstration."
+        "en": "Car parks published live in open data. Others: see the guide.",
+        "fr": "Parkings publiés en direct en open data. Autres villes : voir le guide.",
+        "de": "Live als Open Data veröffentlichte Parkhäuser. Andere Städte: siehe Anleitung.",
+        "es": "Aparcamientos publicados en directo en datos abiertos. Otras ciudades: vea la guía."
       },
-      "placeholder": { "en": "e.g. 2.3522", "fr": "ex. 2.3522" },
-      "required": true,
-      "default": 2.3522,
-      "min": -180,
-      "max": 180
-    },
-    {
-      "key": "unit",
-      "type": "select",
-      "label": { "en": "Temperature unit", "fr": "Unité de température" },
-      "required": false,
-      "default": "celsius",
       "options": [
-        { "value": "celsius", "label": { "en": "Celsius", "fr": "Celsius" } },
-        { "value": "fahrenheit", "label": { "en": "Fahrenheit", "fr": "Fahrenheit" } }
+        {
+          "value": "strasbourg",
+          "label": {
+            "en": "Strasbourg",
+            "fr": "Strasbourg",
+            "de": "Straßburg",
+            "es": "Estrasburgo"
+          }
+        },
+        {
+          "value": "bordeaux",
+          "label": {
+            "en": "Bordeaux Métropole",
+            "fr": "Bordeaux Métropole",
+            "de": "Bordeaux Métropole",
+            "es": "Bordeaux Métropole"
+          }
+        },
+        {
+          "value": "nantes",
+          "label": {
+            "en": "Nantes Métropole",
+            "fr": "Nantes Métropole",
+            "de": "Nantes Métropole",
+            "es": "Nantes Métropole"
+          }
+        },
+        {
+          "value": "rennes",
+          "label": {
+            "en": "Rennes (city-centre car parks, Citédia)",
+            "fr": "Rennes (parkings du centre, Citédia)",
+            "de": "Rennes (Parkhäuser im Zentrum, Citédia)",
+            "es": "Rennes (aparcamientos del centro, Citédia)"
+          }
+        },
+        {
+          "value": "rennes_star",
+          "label": {
+            "en": "Rennes (STAR park-and-ride)",
+            "fr": "Rennes (parcs relais STAR)",
+            "de": "Rennes (P+R-Plätze STAR)",
+            "es": "Rennes (aparcamientos disuasorios STAR)"
+          }
+        },
+        {
+          "value": "grenoble",
+          "label": {
+            "en": "Grenoble area (M réso)",
+            "fr": "Agglomération grenobloise (M réso)",
+            "de": "Großraum Grenoble (M réso)",
+            "es": "Área de Grenoble (M réso)"
+          }
+        },
+        {
+          "value": "poitiers",
+          "label": {
+            "en": "Grand Poitiers",
+            "fr": "Grand Poitiers",
+            "de": "Grand Poitiers",
+            "es": "Grand Poitiers"
+          }
+        }
       ]
     },
     {
-      "key": "poll_frequency",
-      "type": "number",
-      "label": { "en": "Refresh interval (s)", "fr": "Intervalle de rafraîchissement (s)" },
-      "description": {
-        "en": "How often sensors are polled, in seconds (one minute minimum).",
-        "fr": "Fréquence d'interrogation des capteurs, en secondes (une minute minimum)."
+      "key": "refresh_interval",
+      "type": "select",
+      "default": "180",
+      "label": {
+        "en": "Refresh",
+        "fr": "Rafraîchissement",
+        "de": "Aktualisierung",
+        "es": "Actualización"
       },
-      "required": false,
-      "default": 300,
-      "min": 60,
-      "max": 3600
+      "options": [
+        {
+          "value": "120",
+          "label": {
+            "en": "Every 2 minutes",
+            "fr": "Toutes les 2 minutes",
+            "de": "Alle 2 Minuten",
+            "es": "Cada 2 minutos"
+          }
+        },
+        {
+          "value": "180",
+          "label": {
+            "en": "Every 3 minutes",
+            "fr": "Toutes les 3 minutes",
+            "de": "Alle 3 Minuten",
+            "es": "Cada 3 minutos"
+          }
+        },
+        {
+          "value": "300",
+          "label": {
+            "en": "Every 5 minutes",
+            "fr": "Toutes les 5 minutes",
+            "de": "Alle 5 Minuten",
+            "es": "Cada 5 minutos"
+          }
+        }
+      ]
+    },
+    {
+      "key": "language",
+      "type": "select",
+      "default": "fr",
+      "label": {
+        "en": "Language of names and messages",
+        "fr": "Langue des noms et messages",
+        "de": "Sprache der Namen und Nachrichten",
+        "es": "Idioma de nombres y mensajes"
+      },
+      "description": {
+        "en": "Feature names are fixed when a device is added.",
+        "fr": "Les noms des fonctionnalités sont figés à l'ajout de l'appareil.",
+        "de": "Die Namen der Funktionen werden beim Hinzufügen festgelegt.",
+        "es": "Los nombres de las funciones se fijan al añadir el dispositivo."
+      },
+      "options": [
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "Anglais",
+            "de": "Englisch",
+            "es": "Inglés"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "French",
+            "fr": "Français",
+            "de": "Französisch",
+            "es": "Francés"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "German",
+            "fr": "Allemand",
+            "de": "Deutsch",
+            "es": "Alemán"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Spanish",
+            "fr": "Espagnol",
+            "de": "Spanisch",
+            "es": "Español"
+          }
+        }
+      ]
     }
   ],
   "actions": [
     {
-      "key": "test_weather",
-      "label": { "en": "Test the weather provider", "fr": "Tester le fournisseur météo" },
-      "timeout_seconds": 30
-    },
-    {
-      "key": "identify",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
-      "fields": [
-        {
-          "key": "device",
-          "type": "select",
-          "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
-        }
-      ]
+      "key": "status",
+      "label": {
+        "en": "Status",
+        "fr": "État",
+        "de": "Status",
+        "es": "Estado"
+      },
+      "description": {
+        "en": "Cities read, car parks with a live count, last readings and errors.",
+        "fr": "Villes lues, parkings à comptage en direct, dernières lectures et erreurs.",
+        "de": "Gelesene Städte, Parkhäuser mit Live-Zählung, letzte Abfragen und Fehler.",
+        "es": "Ciudades leídas, aparcamientos con recuento en directo, últimas lecturas y errores."
+      },
+      "timeout_seconds": 30,
+      "fields": []
     }
   ],
   "scene_triggers": [
     {
-      "key": "motion_detected",
-      "label": { "en": "Motion detected", "fr": "Mouvement détecté" },
+      "key": "free_low",
+      "label": {
+        "en": "Free spaces running out",
+        "fr": "Places libres sous un seuil",
+        "de": "Freie Plätze werden knapp",
+        "es": "Plazas libres por debajo de un umbral"
+      },
       "description": {
-        "en": "A demo motion sensor saw a person or an animal move.",
-        "fr": "Un détecteur de démonstration a vu bouger une personne ou un animal."
+        "en": "The free spaces of a watched car park drop to the chosen threshold or below.",
+        "fr": "Les places libres d'un parking suivi descendent au seuil choisi ou en dessous.",
+        "de": "Die freien Plätze eines überwachten Parkhauses fallen auf die gewählte Schwelle oder darunter.",
+        "es": "Las plazas libres de un aparcamiento vigilado bajan al umbral elegido o por debajo."
       },
       "fields": [
         {
-          "key": "device",
-          "type": "select",
+          "key": "parking",
+          "type": "multi_select",
           "source": "devices",
-          "label": { "en": "Sensor", "fr": "Détecteur" }
+          "required": false,
+          "label": {
+            "en": "Car parks",
+            "fr": "Parkings",
+            "de": "Parkhäuser",
+            "es": "Aparcamientos"
+          },
+          "description": {
+            "en": "Empty: any watched car park.",
+            "fr": "Vide : n'importe quel parking suivi.",
+            "de": "Leer: jedes überwachte Parkhaus.",
+            "es": "Vacío: cualquier aparcamiento vigilado."
+          }
         },
         {
-          "key": "target",
-          "type": "multi_select",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" },
+          "key": "threshold",
+          "type": "select",
+          "required": true,
+          "label": {
+            "en": "Threshold (free spaces)",
+            "fr": "Seuil (places libres)",
+            "de": "Schwelle (freie Plätze)",
+            "es": "Umbral (plazas libres)"
+          },
           "options": [
-            { "value": "person", "label": { "en": "Person", "fr": "Personne" } },
-            { "value": "animal", "label": { "en": "Animal", "fr": "Animal" } }
+            {
+              "value": "5",
+              "label": {
+                "en": "5",
+                "fr": "5",
+                "de": "5",
+                "es": "5"
+              }
+            },
+            {
+              "value": "10",
+              "label": {
+                "en": "10",
+                "fr": "10",
+                "de": "10",
+                "es": "10"
+              }
+            },
+            {
+              "value": "20",
+              "label": {
+                "en": "20",
+                "fr": "20",
+                "de": "20",
+                "es": "20"
+              }
+            },
+            {
+              "value": "50",
+              "label": {
+                "en": "50",
+                "fr": "50",
+                "de": "50",
+                "es": "50"
+              }
+            },
+            {
+              "value": "100",
+              "label": {
+                "en": "100",
+                "fr": "100",
+                "de": "100",
+                "es": "100"
+              }
+            }
           ]
         }
       ],
       "variables": [
         {
-          "key": "target",
+          "key": "parking_name",
           "type": "string",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" }
+          "label": {
+            "en": "Car park",
+            "fr": "Parking",
+            "de": "Parkhaus",
+            "es": "Aparcamiento"
+          }
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "label": {
+            "en": "City",
+            "fr": "Ville",
+            "de": "Stadt",
+            "es": "Ciudad"
+          }
+        },
+        {
+          "key": "free",
+          "type": "number",
+          "label": {
+            "en": "Free spaces",
+            "fr": "Places libres",
+            "de": "Freie Plätze",
+            "es": "Plazas libres"
+          }
+        },
+        {
+          "key": "total",
+          "type": "number",
+          "label": {
+            "en": "Total spaces",
+            "fr": "Places totales",
+            "de": "Plätze gesamt",
+            "es": "Plazas totales"
+          }
+        },
+        {
+          "key": "occupancy",
+          "type": "number",
+          "label": {
+            "en": "Occupancy (%)",
+            "fr": "Taux d'occupation (%)",
+            "de": "Belegung (%)",
+            "es": "Ocupación (%)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "free_back",
+      "label": {
+        "en": "Free spaces back",
+        "fr": "Places libres revenues",
+        "de": "Wieder freie Plätze",
+        "es": "Plazas libres de nuevo"
+      },
+      "description": {
+        "en": "The free spaces of a watched car park rise above the chosen threshold.",
+        "fr": "Les places libres d'un parking suivi remontent au-dessus du seuil choisi.",
+        "de": "Die freien Plätze eines überwachten Parkhauses steigen über die gewählte Schwelle.",
+        "es": "Las plazas libres de un aparcamiento vigilado suben por encima del umbral elegido."
+      },
+      "fields": [
+        {
+          "key": "parking",
+          "type": "multi_select",
+          "source": "devices",
+          "required": false,
+          "label": {
+            "en": "Car parks",
+            "fr": "Parkings",
+            "de": "Parkhäuser",
+            "es": "Aparcamientos"
+          },
+          "description": {
+            "en": "Empty: any watched car park.",
+            "fr": "Vide : n'importe quel parking suivi.",
+            "de": "Leer: jedes überwachte Parkhaus.",
+            "es": "Vacío: cualquier aparcamiento vigilado."
+          }
+        },
+        {
+          "key": "threshold",
+          "type": "select",
+          "required": true,
+          "label": {
+            "en": "Threshold (free spaces)",
+            "fr": "Seuil (places libres)",
+            "de": "Schwelle (freie Plätze)",
+            "es": "Umbral (plazas libres)"
+          },
+          "options": [
+            {
+              "value": "5",
+              "label": {
+                "en": "5",
+                "fr": "5",
+                "de": "5",
+                "es": "5"
+              }
+            },
+            {
+              "value": "10",
+              "label": {
+                "en": "10",
+                "fr": "10",
+                "de": "10",
+                "es": "10"
+              }
+            },
+            {
+              "value": "20",
+              "label": {
+                "en": "20",
+                "fr": "20",
+                "de": "20",
+                "es": "20"
+              }
+            },
+            {
+              "value": "50",
+              "label": {
+                "en": "50",
+                "fr": "50",
+                "de": "50",
+                "es": "50"
+              }
+            },
+            {
+              "value": "100",
+              "label": {
+                "en": "100",
+                "fr": "100",
+                "de": "100",
+                "es": "100"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "parking_name",
+          "type": "string",
+          "label": {
+            "en": "Car park",
+            "fr": "Parking",
+            "de": "Parkhaus",
+            "es": "Aparcamiento"
+          }
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "label": {
+            "en": "City",
+            "fr": "Ville",
+            "de": "Stadt",
+            "es": "Ciudad"
+          }
+        },
+        {
+          "key": "free",
+          "type": "number",
+          "label": {
+            "en": "Free spaces",
+            "fr": "Places libres",
+            "de": "Freie Plätze",
+            "es": "Plazas libres"
+          }
+        },
+        {
+          "key": "total",
+          "type": "number",
+          "label": {
+            "en": "Total spaces",
+            "fr": "Places totales",
+            "de": "Plätze gesamt",
+            "es": "Plazas totales"
+          }
+        },
+        {
+          "key": "occupancy",
+          "type": "number",
+          "label": {
+            "en": "Occupancy (%)",
+            "fr": "Taux d'occupation (%)",
+            "de": "Belegung (%)",
+            "es": "Ocupación (%)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "full",
+      "label": {
+        "en": "Car park full",
+        "fr": "Parking complet",
+        "de": "Parkhaus voll",
+        "es": "Aparcamiento completo"
+      },
+      "description": {
+        "en": "A watched car park becomes full (no free space, or the operator's own full flag).",
+        "fr": "Un parking suivi devient complet (plus de place, ou complet selon l'exploitant).",
+        "de": "Ein überwachtes Parkhaus ist voll (kein freier Platz oder laut Betreiber voll).",
+        "es": "Un aparcamiento vigilado se llena (sin plazas, o completo según el operador)."
+      },
+      "fields": [
+        {
+          "key": "parking",
+          "type": "multi_select",
+          "source": "devices",
+          "required": false,
+          "label": {
+            "en": "Car parks",
+            "fr": "Parkings",
+            "de": "Parkhäuser",
+            "es": "Aparcamientos"
+          },
+          "description": {
+            "en": "Empty: any watched car park.",
+            "fr": "Vide : n'importe quel parking suivi.",
+            "de": "Leer: jedes überwachte Parkhaus.",
+            "es": "Vacío: cualquier aparcamiento vigilado."
+          }
+        }
+      ],
+      "variables": [
+        {
+          "key": "parking_name",
+          "type": "string",
+          "label": {
+            "en": "Car park",
+            "fr": "Parking",
+            "de": "Parkhaus",
+            "es": "Aparcamiento"
+          }
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "label": {
+            "en": "City",
+            "fr": "Ville",
+            "de": "Stadt",
+            "es": "Ciudad"
+          }
+        },
+        {
+          "key": "free",
+          "type": "number",
+          "label": {
+            "en": "Free spaces",
+            "fr": "Places libres",
+            "de": "Freie Plätze",
+            "es": "Plazas libres"
+          }
+        },
+        {
+          "key": "total",
+          "type": "number",
+          "label": {
+            "en": "Total spaces",
+            "fr": "Places totales",
+            "de": "Plätze gesamt",
+            "es": "Plazas totales"
+          }
+        },
+        {
+          "key": "occupancy",
+          "type": "number",
+          "label": {
+            "en": "Occupancy (%)",
+            "fr": "Taux d'occupation (%)",
+            "de": "Belegung (%)",
+            "es": "Ocupación (%)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "closed",
+      "label": {
+        "en": "Car park closed",
+        "fr": "Parking fermé",
+        "de": "Parkhaus geschlossen",
+        "es": "Aparcamiento cerrado"
+      },
+      "description": {
+        "en": "A watched car park closes (cities that publish the state only).",
+        "fr": "Un parking suivi ferme (villes qui publient l'état seulement).",
+        "de": "Ein überwachtes Parkhaus schließt (nur Städte, die den Zustand veröffentlichen).",
+        "es": "Un aparcamiento vigilado cierra (solo ciudades que publican el estado)."
+      },
+      "fields": [
+        {
+          "key": "parking",
+          "type": "multi_select",
+          "source": "devices",
+          "required": false,
+          "label": {
+            "en": "Car parks",
+            "fr": "Parkings",
+            "de": "Parkhäuser",
+            "es": "Aparcamientos"
+          },
+          "description": {
+            "en": "Empty: any watched car park.",
+            "fr": "Vide : n'importe quel parking suivi.",
+            "de": "Leer: jedes überwachte Parkhaus.",
+            "es": "Vacío: cualquier aparcamiento vigilado."
+          }
+        }
+      ],
+      "variables": [
+        {
+          "key": "parking_name",
+          "type": "string",
+          "label": {
+            "en": "Car park",
+            "fr": "Parking",
+            "de": "Parkhaus",
+            "es": "Aparcamiento"
+          }
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "label": {
+            "en": "City",
+            "fr": "Ville",
+            "de": "Stadt",
+            "es": "Ciudad"
+          }
+        },
+        {
+          "key": "free",
+          "type": "number",
+          "label": {
+            "en": "Free spaces",
+            "fr": "Places libres",
+            "de": "Freie Plätze",
+            "es": "Plazas libres"
+          }
+        },
+        {
+          "key": "total",
+          "type": "number",
+          "label": {
+            "en": "Total spaces",
+            "fr": "Places totales",
+            "de": "Plätze gesamt",
+            "es": "Plazas totales"
+          }
+        },
+        {
+          "key": "occupancy",
+          "type": "number",
+          "label": {
+            "en": "Occupancy (%)",
+            "fr": "Taux d'occupation (%)",
+            "de": "Belegung (%)",
+            "es": "Ocupación (%)"
+          }
         }
       ]
     }
   ],
   "scene_actions": [
     {
-      "key": "identify_device",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
+      "key": "find_best",
+      "label": {
+        "en": "Find the car park with the most free spaces",
+        "fr": "Trouver le parking le plus libre",
+        "de": "Parkhaus mit den meisten freien Plätzen finden",
+        "es": "Buscar el aparcamiento con más plazas libres"
+      },
       "description": {
-        "en": "Make a device signal itself (the demo light blinks).",
-        "fr": "Fait se signaler un appareil (la lampe de démonstration clignote)."
+        "en": "Among your watched car parks, the open one with the most free spaces, with a sentence ready to send.",
+        "fr": "Parmi vos parkings suivis, celui qui est ouvert et a le plus de places libres, avec une phrase prête à envoyer.",
+        "de": "Unter deinen überwachten Parkhäusern das geöffnete mit den meisten freien Plätzen, mit einem fertigen Satz.",
+        "es": "Entre sus aparcamientos vigilados, el abierto con más plazas libres, con una frase lista para enviar."
       },
       "timeout_seconds": 15,
       "fields": [
         {
-          "key": "device",
-          "type": "select",
+          "key": "parkings",
+          "type": "multi_select",
           "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
+          "required": false,
+          "label": {
+            "en": "Car parks compared",
+            "fr": "Parkings comparés",
+            "de": "Verglichene Parkhäuser",
+            "es": "Aparcamientos comparados"
+          },
+          "description": {
+            "en": "Empty: every watched car park.",
+            "fr": "Vide : tous les parkings suivis.",
+            "de": "Leer: alle überwachten Parkhäuser.",
+            "es": "Vacío: todos los aparcamientos vigilados."
+          }
         }
       ],
       "outputs": [
         {
-          "key": "signalled",
-          "type": "boolean",
-          "label": { "en": "Device signalled", "fr": "Appareil signalé" }
+          "key": "found",
+          "type": "number",
+          "label": {
+            "en": "Found (1 = yes, 0 = no)",
+            "fr": "Trouvé (1 = oui, 0 = non)",
+            "de": "Gefunden (1 = ja, 0 = nein)",
+            "es": "Encontrado (1 = sí, 0 = no)"
+          }
+        },
+        {
+          "key": "sentence",
+          "type": "string",
+          "label": {
+            "en": "Sentence",
+            "fr": "Phrase",
+            "de": "Satz",
+            "es": "Frase"
+          }
+        },
+        {
+          "key": "parking_name",
+          "type": "string",
+          "label": {
+            "en": "Car park",
+            "fr": "Parking",
+            "de": "Parkhaus",
+            "es": "Aparcamiento"
+          }
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "label": {
+            "en": "City",
+            "fr": "Ville",
+            "de": "Stadt",
+            "es": "Ciudad"
+          }
+        },
+        {
+          "key": "free",
+          "type": "number",
+          "label": {
+            "en": "Free spaces",
+            "fr": "Places libres",
+            "de": "Freie Plätze",
+            "es": "Plazas libres"
+          }
+        },
+        {
+          "key": "total",
+          "type": "number",
+          "label": {
+            "en": "Total spaces",
+            "fr": "Places totales",
+            "de": "Plätze gesamt",
+            "es": "Plazas totales"
+          }
+        },
+        {
+          "key": "occupancy",
+          "type": "number",
+          "label": {
+            "en": "Occupancy (%)",
+            "fr": "Taux d'occupation (%)",
+            "de": "Belegung (%)",
+            "es": "Ocupación (%)"
+          }
         }
       ]
     }
   ],
   "widgets": [
     {
-      "key": "demo_status",
-      "label": { "en": "Demo status", "fr": "État de la démo" },
-      "description": {
-        "en": "Live temperature and plug power, plug connection and observed location.",
-        "fr": "Température et puissance en direct, connexion de la prise, position observée."
+      "key": "parkings",
+      "label": {
+        "en": "Car parks",
+        "fr": "Parkings",
+        "de": "Parkhäuser",
+        "es": "Aparcamientos"
       },
-      "icon": "activity",
-      "action_timeout_seconds": 15
+      "description": {
+        "en": "Free spaces of your car parks, colored by how full they are.",
+        "fr": "Places libres de vos parkings, en couleur selon le remplissage.",
+        "de": "Freie Plätze deiner Parkhäuser, farbig nach Belegung.",
+        "es": "Plazas libres de sus aparcamientos, en color según la ocupación."
+      },
+      "icon": "map-pin",
+      "settings": [
+        {
+          "key": "parkings",
+          "type": "multi_select",
+          "source": "devices",
+          "required": false,
+          "label": {
+            "en": "Car parks shown",
+            "fr": "Parkings affichés",
+            "de": "Angezeigte Parkhäuser",
+            "es": "Aparcamientos mostrados"
+          },
+          "description": {
+            "en": "Empty: every watched car park (10 at most).",
+            "fr": "Vide : tous les parkings suivis (10 au plus).",
+            "de": "Leer: alle überwachten Parkhäuser (höchstens 10).",
+            "es": "Vacío: todos los aparcamientos vigilados (10 como máximo)."
+          }
+        }
+      ]
     }
   ]
 }

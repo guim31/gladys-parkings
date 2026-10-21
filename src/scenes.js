@@ -1,41 +1,76 @@
 // -----------------------------------------------------------------------------
-// Scene actions (SDK v0.14+, Gladys 5.1+).
+// Scene actions (manifest `scene_actions`, Gladys 5.1+).
 //
-// A scene action is an OPERATION a scene author places in a scene, with
-// parameters and a result: "identify this device", "take a snapshot", "clean
-// these rooms". Each one is declared in the manifest `scene_actions` field
-// (key, label, `fields` in the config_schema grammar, scalar `outputs`) and
-// handled here, keyed by that same `key`; index.js registers every entry with
-// `gladys.onSceneAction(key, ...)`.
+// - find_best: among the watched car parks (all of them, or the ones picked),
+//   the open one with the most free spaces, as numbers for a "Continue only
+//   if" step and as a sentence ready for a message or a speaker
+//   ("Parking Gare Wodli : 391 places libres sur 955.").
 //
-// Scene TRIGGERS are the other direction ("this happened"): they are fired by
-// the device that observes the event, see src/devices/motionSensor.js.
-//
-// The rules that matter:
-//   - `fields` arrive RESOLVED: scene variables substituted, defaults applied,
-//     validated by the core; a `"source": "devices"` field is the chosen
-//     device external_id;
-//   - resolve an object of the declared `outputs` (scalars only), readable by
-//     the following actions of the scene, or `undefined` for none. Keys not
-//     declared in the manifest are dropped by the core;
-//   - throwing fails THIS action only: the scene logs it and continues. A
-//     scene action is never a condition: return an output and let the scene
-//     author gate on it;
-//   - never fire a scene event as a consequence of a received action: a scene
-//     bound to that event would loop through the integration.
+// A scene action does not receive the user's language: the sentence follows
+// the `language` of the configuration. Outputs are numbers, never booleans:
+// the core's "Continue only if" compares with ===. A car park closed, without
+// a live count or with a count out of date is never chosen.
 // -----------------------------------------------------------------------------
 
-import { createLogger } from '@gladysassistant/integration-sdk';
-import { signalDevice } from './devices/index.js';
+import { occupancy, prettyName } from './devices.js';
+import { TEXT, say } from './messages.js';
 
-const logger = createLogger({ name: 'scenes' });
+export class SceneError extends Error {}
+
+const chosenIds = (value) =>
+  (Array.isArray(value) ? value : value ? [value] : []).map(String).filter(Boolean);
 
 export const SCENE_ACTIONS = {
-  // The ack is awaited under the action's `timeout_seconds` (15 s in the
-  // manifest), counted from the moment the scene reaches the action.
-  async identify_device(gladys, { fields, config }) {
-    logger.info(`Scene action identify_device <- ${fields.device}`);
-    const signalled = await signalDevice(gladys, fields.device, config);
-    return { signalled };
+  async find_best(service, { fields }) {
+    const language = service.config.language;
+    // Asked right at start: the first reading, not "nothing free".
+    await service.firstReading();
+    const watched = service.watched().map((entry) => entry.deviceId);
+    if (watched.length === 0) {
+      throw new SceneError(say(TEXT, language, 'noParking'));
+    }
+    const chosen = chosenIds(fields?.parkings).filter((id) => watched.includes(id));
+    if (chosenIds(fields?.parkings).length > 0 && chosen.length === 0) {
+      throw new SceneError(say(TEXT, language, 'gone'));
+    }
+    let best = null;
+    for (const deviceId of chosen.length > 0 ? chosen : watched) {
+      const found = service.lookup(deviceId);
+      const reading = found?.reading;
+      if (
+        !reading ||
+        reading.free === null ||
+        reading.free === 0 ||
+        reading.open === 0 ||
+        service.isStale(found.city, reading)
+      ) {
+        continue;
+      }
+      if (!best || reading.free > best.reading.free) {
+        best = { ...found, deviceId };
+      }
+    }
+    if (!best) {
+      return {
+        found: 0,
+        sentence: say(TEXT, language, 'noneFree'),
+        parking_name: '',
+        city: '',
+        free: 0,
+        total: 0,
+        occupancy: 0,
+      };
+    }
+    const { city, reading } = best;
+    const name = prettyName(reading.name);
+    return {
+      found: 1,
+      sentence: say(TEXT, language, 'sentence', { ...reading, name }),
+      parking_name: name,
+      city: city.source.name,
+      free: reading.free,
+      total: reading.total ?? 0,
+      occupancy: occupancy(reading) ?? 0,
+    };
   },
 };

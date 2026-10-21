@@ -1,0 +1,635 @@
+{
+  "total_count": 35,
+  "results": [
+    {
+      "nom_parking": "Parking Gare Wodli",
+      "idsurfs": "1382_DEP_8",
+      "ident": 10,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 955,
+      "libre": 391,
+      "infousager": "390",
+      "realtimestatus": "GREEN",
+      "infoappli": "391",
+      "taux_occup": 0.5905759162303665,
+      "position": {
+        "lon": 7.7367710015538,
+        "lat": 48.5873845279566
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Zénith",
+      "idsurfs": "1400_DEP_26",
+      "ident": 1,
+      "etat": 2,
+      "etat_descriptif": "Fermé",
+      "total": 3175,
+      "libre": 2976,
+      "infousager": "0",
+      "realtimestatus": "BLACK",
+      "infoappli": "Fermé",
+      "taux_occup": 0.06267716535433071,
+      "position": {
+        "lon": 7.68646701218103,
+        "lat": 48.5953352876375
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Centre Opéra Broglie",
+      "idsurfs": "1378_DEP_4",
+      "ident": 3,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 447,
+      "libre": 244,
+      "infousager": "240",
+      "realtimestatus": "GREEN",
+      "infoappli": "244",
+      "taux_occup": 0.4541387024608501,
+      "position": {
+        "lon": 7.74927491976424,
+        "lat": 48.585689025956
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Baggersee",
+      "idsurfs": "1376_DEP_2",
+      "ident": 4,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 460,
+      "libre": 247,
+      "infousager": "240",
+      "realtimestatus": "GREEN",
+      "infoappli": "247",
+      "taux_occup": 0.46304347826086956,
+      "position": {
+        "lon": 7.73569466237007,
+        "lat": 48.5446469517313
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Bateliers",
+      "idsurfs": "1377_DEP_3",
+      "ident": 2,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 283,
+      "libre": 107,
+      "infousager": "100",
+      "realtimestatus": "GREEN",
+      "infoappli": "107",
+      "taux_occup": 0.6219081272084805,
+      "position": {
+        "lon": 7.75604844096195,
+        "lat": 48.5810021316449
+      },
+      "couleur_occup": "orange"
+    },
+    {
+      "nom_parking": "Parking Austerlitz",
+      "idsurfs": "1375_DEP_1",
+      "ident": 21,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 482,
+      "libre": 308,
+      "infousager": "300",
+      "realtimestatus": "GREEN",
+      "infoappli": "308",
+      "taux_occup": 0.36099585062240663,
+      "position": {
+        "lon": 7.75179597699974,
+        "lat": 48.5779636853829
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Gutenberg",
+      "idsurfs": "1383_DEP_9",
+      "ident": 11,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 244,
+      "libre": 201,
+      "infousager": "200",
+      "realtimestatus": "GREEN",
+      "infoappli": "201",
+      "taux_occup": 0.1762295081967213,
+      "position": {
+        "lon": 7.74828482148178,
+        "lat": 48.5815606649063
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Kleber Homme de fer",
+      "idsurfs": "1388_DEP_14",
+      "ident": 12,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 462,
+      "libre": 79,
+      "infousager": "70",
+      "realtimestatus": "ORANGE",
+      "infoappli": "79",
+      "taux_occup": 0.829004329004329,
+      "position": {
+        "lon": 7.74506276428556,
+        "lat": 48.5834973716322
+      },
+      "couleur_occup": "orange"
+    },
+    {
+      "nom_parking": "Parking Halles P1 Marais vert",
+      "idsurfs": "1384_DEP_10",
+      "ident": 13,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 534,
+      "libre": 474,
+      "infousager": "470",
+      "realtimestatus": "GREEN",
+      "infoappli": "474",
+      "taux_occup": 0.11235955056179775,
+      "position": {
+        "lon": 7.73937493189863,
+        "lat": 48.5873618580082
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking P2 Sebastopol",
+      "idsurfs": "1385_DEP_11",
+      "ident": 14,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 482,
+      "libre": 215,
+      "infousager": "210",
+      "realtimestatus": "GREEN",
+      "infoappli": "215",
+      "taux_occup": 0.553941908713693,
+      "position": {
+        "lon": 7.74215216511801,
+        "lat": 48.5867897638138
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Robertsau Boecklin",
+      "idsurfs": "1393_DEP_19",
+      "ident": 15,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 92,
+      "libre": 72,
+      "infousager": "70",
+      "realtimestatus": "GREEN",
+      "infoappli": "72",
+      "taux_occup": 0.21739130434782608,
+      "position": {
+        "lon": 7.77656295435852,
+        "lat": 48.5979711278741
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Centre historique Petite France",
+      "idsurfs": "1390_DEP_16",
+      "ident": 17,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 939,
+      "libre": 606,
+      "infousager": "600",
+      "realtimestatus": "GREEN",
+      "infoappli": "606",
+      "taux_occup": 0.3546325878594249,
+      "position": {
+        "lon": 7.73525856082617,
+        "lat": 48.5791976381607
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Rives de l'Aar",
+      "idsurfs": "1391_DEP_17",
+      "ident": 18,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 456,
+      "libre": 237,
+      "infousager": "230",
+      "realtimestatus": "GREEN",
+      "infoappli": "237",
+      "taux_occup": 0.48026315789473684,
+      "position": {
+        "lon": 7.75381030140218,
+        "lat": 48.5996315289378
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Saint Nicolas",
+      "idsurfs": "1395_DEP_21",
+      "ident": 19,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 360,
+      "libre": 353,
+      "infousager": "353",
+      "realtimestatus": "GREEN",
+      "infoappli": "353",
+      "taux_occup": 0.019444444444444445,
+      "position": {
+        "lon": 7.74952649489905,
+        "lat": 48.5755761553687
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Ducs d'Alsace",
+      "idsurfs": "1379_DEP_5",
+      "ident": 5,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 600,
+      "libre": 368,
+      "infousager": "360",
+      "realtimestatus": "GREEN",
+      "infoappli": "368",
+      "taux_occup": 0.38666666666666666,
+      "position": {
+        "lon": 7.71596677960563,
+        "lat": 48.5892383943901
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Elsau",
+      "idsurfs": "1380_DEP_6",
+      "ident": 6,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 220,
+      "libre": 124,
+      "infousager": "120",
+      "realtimestatus": "GREEN",
+      "infoappli": "124",
+      "taux_occup": 0.43636363636363634,
+      "position": {
+        "lon": 7.73031009299049,
+        "lat": 48.5684033861816
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Rotonde",
+      "idsurfs": "1394_DEP_20",
+      "ident": 7,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 450,
+      "libre": 114,
+      "infousager": "110",
+      "realtimestatus": "GREEN",
+      "infoappli": "114",
+      "taux_occup": 0.7466666666666667,
+      "position": {
+        "lon": 7.72610093327335,
+        "lat": 48.5912264325338
+      },
+      "couleur_occup": "orange"
+    },
+    {
+      "nom_parking": "Parking Gare courte durée",
+      "idsurfs": "1381_DEP_7",
+      "ident": 8,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 188,
+      "libre": 151,
+      "infousager": "150",
+      "realtimestatus": "GREEN",
+      "infoappli": "151",
+      "taux_occup": 0.19680851063829788,
+      "position": {
+        "lon": 7.73587617577237,
+        "lat": 48.5843287980526
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Sainte Aurélie Gare",
+      "idsurfs": "1396_DEP_22",
+      "ident": 9,
+      "etat": 0,
+      "etat_descriptif": "frequentation temps reel indisponible",
+      "total": 557,
+      "libre": 0,
+      "infousager": "0",
+      "realtimestatus": "BLUE",
+      "infoappli": "Inconnu",
+      "taux_occup": 1,
+      "position": {
+        "lon": 7.73227518458014,
+        "lat": 48.5825499187466
+      },
+      "couleur_occup": "noir"
+    },
+    {
+      "nom_parking": "Parking P3 Wilson",
+      "idsurfs": "1386_DEP_12",
+      "ident": 22,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 977,
+      "libre": 805,
+      "infousager": "800",
+      "realtimestatus": "GREEN",
+      "infoappli": "805",
+      "taux_occup": 0.17604912998976457,
+      "position": {
+        "lon": 7.74014892918823,
+        "lat": 48.5879606695026
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Hoenheim gare",
+      "idsurfs": "1387_DEP_13",
+      "ident": 24,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 340,
+      "libre": 228,
+      "infousager": "220",
+      "realtimestatus": "GREEN",
+      "infoappli": "228",
+      "taux_occup": 0.32941176470588235,
+      "position": {
+        "lon": 7.75778587766437,
+        "lat": 48.62788850674
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Poteries",
+      "idsurfs": "1398_DEP_24",
+      "ident": 25,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 102,
+      "libre": 45,
+      "infousager": "40",
+      "realtimestatus": "GREEN",
+      "infoappli": "45",
+      "taux_occup": 0.5588235294117647,
+      "position": {
+        "lon": 7.69108730315623,
+        "lat": 48.5833504860946
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Espace européen de l'entreprise",
+      "idsurfs": "1399_DEP_25",
+      "ident": 26,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 170,
+      "libre": 113,
+      "infousager": "110",
+      "realtimestatus": "GREEN",
+      "infoappli": "113",
+      "taux_occup": 0.3352941176470588,
+      "position": {
+        "lon": 7.71966106577424,
+        "lat": 48.6167445706505
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Rivetoile",
+      "idsurfs": "1392_DEP_18",
+      "ident": 23,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 1520,
+      "libre": 1412,
+      "infousager": "1410",
+      "realtimestatus": "GREEN",
+      "infoappli": "1412",
+      "taux_occup": 0.07105263157894737,
+      "position": {
+        "lon": 7.75983823964716,
+        "lat": 48.5732829348039
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "P1 Esplanade - Centre commercial",
+      "idsurfs": "1703_DEP_27",
+      "ident": 27,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 251,
+      "libre": 210,
+      "infousager": "210",
+      "realtimestatus": "GREEN",
+      "infoappli": "210",
+      "taux_occup": 0.16334661354581673,
+      "position": {
+        "lon": 7.77158518917195,
+        "lat": 48.5775007075809
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Hôpital Hautepierre",
+      "idsurfs": "1706_DEP_28",
+      "ident": 28,
+      "etat": 0,
+      "etat_descriptif": "frequentation temps reel indisponible",
+      "total": 800,
+      "libre": 0,
+      "infousager": "0",
+      "realtimestatus": "BLUE",
+      "infoappli": "Inconnu",
+      "taux_occup": 1,
+      "position": {
+        "lon": 7.70898366141415,
+        "lat": 48.591985610722
+      },
+      "couleur_occup": "noir"
+    },
+    {
+      "nom_parking": "Parking Coubertin",
+      "idsurfs": "2413_DEP_59",
+      "ident": 30,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 719,
+      "libre": 551,
+      "infousager": "550",
+      "realtimestatus": "GREEN",
+      "infoappli": "551",
+      "taux_occup": 0.2336578581363004,
+      "position": {
+        "lon": 7.768342183051484,
+        "lat": 48.600222553324905
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Parc des Romains",
+      "idsurfs": "2356_DEP_38",
+      "ident": 31,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 324,
+      "libre": 191,
+      "infousager": "190",
+      "realtimestatus": "GREEN",
+      "infoappli": "191",
+      "taux_occup": 0.4104938271604938,
+      "position": {
+        "lon": 7.724652978338745,
+        "lat": 48.581556385183006
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Europe Wacken",
+      "idsurfs": "2572_DEP_86",
+      "ident": 29,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 315,
+      "libre": 277,
+      "infousager": "270",
+      "realtimestatus": "GREEN",
+      "infoappli": "277",
+      "taux_occup": 0.12063492063492064,
+      "position": {
+        "lon": 7.762994915127296,
+        "lat": 48.598883133583065
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Dock 1",
+      "idsurfs": "2573_DEP_87",
+      "ident": 16,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 432,
+      "libre": 359,
+      "infousager": "350",
+      "realtimestatus": "GREEN",
+      "infoappli": "359",
+      "taux_occup": 0.16898148148148148,
+      "position": {
+        "lon": 7.780669396027458,
+        "lat": 48.57151337060701
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking COOP",
+      "idsurfs": "2574_DEP_88",
+      "ident": 32,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 600,
+      "libre": 535,
+      "infousager": "530",
+      "realtimestatus": "GREEN",
+      "infoappli": "535",
+      "taux_occup": 0.10833333333333334,
+      "position": {
+        "lon": 7.791303759389737,
+        "lat": 48.57470310065824
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Starlette",
+      "idsurfs": "2575_DEP_89",
+      "ident": 33,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 500,
+      "libre": 368,
+      "infousager": "360",
+      "realtimestatus": "GREEN",
+      "infoappli": "368",
+      "taux_occup": 0.264,
+      "position": {
+        "lon": 7.784830780697454,
+        "lat": 48.57367055655507
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Kibitzenau",
+      "idsurfs": "2582_DEP_90",
+      "ident": 20,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 93,
+      "libre": 24,
+      "infousager": "20",
+      "realtimestatus": "ORANGE",
+      "infoappli": "24",
+      "taux_occup": 0.7419354838709677,
+      "position": {
+        "lon": 7.7677689,
+        "lat": 48.5556289
+      },
+      "couleur_occup": "orange"
+    },
+    {
+      "nom_parking": "Parking Wolfisheim Henri Rendu",
+      "idsurfs": "2612_DEP_91",
+      "ident": 35,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 103,
+      "libre": 78,
+      "infousager": "70",
+      "realtimestatus": "GREEN",
+      "infoappli": "78",
+      "taux_occup": 0.24271844660194175,
+      "position": {
+        "lon": 7.6719818029537885,
+        "lat": 48.591898967989344
+      },
+      "couleur_occup": "vert"
+    },
+    {
+      "nom_parking": "Parking Rivetoile Cinéma",
+      "idsurfs": "2439_DEP_60",
+      "ident": 34,
+      "etat": 1,
+      "etat_descriptif": "Ouvert",
+      "total": 508,
+      "libre": 434,
+      "infousager": "430",
+      "realtimestatus": "GREEN",
+      "infoappli": "434",
+      "taux_occup": 0.14566929133858267,
+      "position": {
+        "lon": 7.7624467,
+        "lat": 48.573079
+      },
+      "couleur_occup": "vert"
+    }
+  ]
+}

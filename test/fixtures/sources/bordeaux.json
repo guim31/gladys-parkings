@@ -1,0 +1,677 @@
+{
+  "total_count": 56,
+  "results": [
+    {
+      "ident": "CUBPK15",
+      "nom": "Clemenceau",
+      "etat": "LIBRE",
+      "total": 379,
+      "libres": 230,
+      "mdate": "2026-10-21T14:33:24+00:00",
+      "geo_point_2d": {
+        "lon": -0.5798571,
+        "lat": 44.8423537
+      }
+    },
+    {
+      "ident": "CUBPK84",
+      "nom": "Parc Relais Quarante Journaux",
+      "etat": "LIBRE",
+      "total": 200,
+      "libres": 177,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.569131,
+        "lat": 44.8837545
+      }
+    },
+    {
+      "ident": "CUBPK49",
+      "nom": "Parc Relais La Gardette Nord",
+      "etat": "LIBRE",
+      "total": 242,
+      "libres": 113,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.5177862,
+        "lat": 44.8882821
+      }
+    },
+    {
+      "ident": "CUBPK29",
+      "nom": "Victoire",
+      "etat": "LIBRE",
+      "total": 550,
+      "libres": 331,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5718999,
+        "lat": 44.8310288
+      }
+    },
+    {
+      "ident": "CUBPK30",
+      "nom": "Centre Commercial Meriadeck",
+      "etat": "LIBRE",
+      "total": 1230,
+      "libres": 823,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5839712,
+        "lat": 44.8391646
+      }
+    },
+    {
+      "ident": "CUBPK38",
+      "nom": "Liberation",
+      "etat": "LIBRE",
+      "total": 137,
+      "libres": 26,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5956902,
+        "lat": 44.8554013
+      }
+    },
+    {
+      "ident": "CUBPK74",
+      "nom": "Laharpe",
+      "etat": "LIBRE",
+      "total": 80,
+      "libres": 27,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5966865,
+        "lat": 44.8539048
+      }
+    },
+    {
+      "ident": "CUBPK47",
+      "nom": "Parc Relais Floirac Dravemont",
+      "etat": "LIBRE",
+      "total": 41,
+      "libres": 32,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.5105513,
+        "lat": 44.8447411
+      }
+    },
+    {
+      "ident": "CUBPK45",
+      "nom": "Parc Relais Buttiniere",
+      "etat": "LIBRE",
+      "total": 600,
+      "libres": 211,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.5245093,
+        "lat": 44.8651709
+      }
+    },
+    {
+      "ident": "CUBPK40",
+      "nom": "Pessac Centre",
+      "etat": "LIBRE",
+      "total": 400,
+      "libres": 241,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.6322405,
+        "lat": 44.8051041
+      }
+    },
+    {
+      "ident": "CUBPK100",
+      "nom": "Bassins A Flots",
+      "etat": "LIBRE",
+      "total": 250,
+      "libres": 141,
+      "mdate": "2026-10-21T14:32:39+00:00",
+      "geo_point_2d": {
+        "lon": -0.5556869,
+        "lat": 44.8628438
+      }
+    },
+    {
+      "ident": "CUBPK39",
+      "nom": "Merignac Centre",
+      "etat": "LIBRE",
+      "total": 285,
+      "libres": 163,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.6476843,
+        "lat": 44.8426599
+      }
+    },
+    {
+      "ident": "CUBPK109",
+      "nom": "Amedee St Germain",
+      "etat": "LIBRE",
+      "total": 639,
+      "libres": 326,
+      "mdate": "2026-10-21T14:33:02+00:00",
+      "geo_point_2d": {
+        "lon": -0.5613722,
+        "lat": 44.8197814
+      }
+    },
+    {
+      "ident": "CUBPK112",
+      "nom": "Amplitude",
+      "etat": "LIBRE",
+      "total": 396,
+      "libres": 153,
+      "mdate": "2026-10-21T14:33:05+00:00",
+      "geo_point_2d": {
+        "lon": -0.5548014,
+        "lat": 44.8388371
+      }
+    },
+    {
+      "ident": "CUBPK28",
+      "nom": "Front Du Medoc",
+      "etat": "FERME",
+      "total": 70,
+      "libres": 70,
+      "mdate": "2026-10-21T14:32:55+00:00",
+      "geo_point_2d": {
+        "lon": -0.5863109,
+        "lat": 44.8388659
+      }
+    },
+    {
+      "ident": "CUBPK24",
+      "nom": "Gambetta",
+      "etat": "LIBRE",
+      "total": 424,
+      "libres": 57,
+      "mdate": "2026-10-21T14:32:53+00:00",
+      "geo_point_2d": {
+        "lon": -0.5830064,
+        "lat": 44.8400091
+      }
+    },
+    {
+      "ident": "CUBPK06",
+      "nom": "Camille Jullian",
+      "etat": "LIBRE",
+      "total": 338,
+      "libres": 268,
+      "mdate": "2026-10-21T14:33:50+00:00",
+      "geo_point_2d": {
+        "lon": -0.5720891,
+        "lat": 44.8389894
+      }
+    },
+    {
+      "ident": "CUBPK07",
+      "nom": "Grands Hommes",
+      "etat": "LIBRE",
+      "total": 415,
+      "libres": 138,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5774475,
+        "lat": 44.8428111
+      }
+    },
+    {
+      "ident": "CUBPK82",
+      "nom": "Floirac Arena",
+      "etat": "LIBRE",
+      "total": 962,
+      "libres": 939,
+      "mdate": "2026-10-21T14:34:04+00:00",
+      "geo_point_2d": {
+        "lon": -0.5300949,
+        "lat": 44.8238769
+      }
+    },
+    {
+      "ident": "CUBPK41",
+      "nom": "Parc Relais Arlac",
+      "etat": "FERME",
+      "total": 393,
+      "libres": 392,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.6252913,
+        "lat": 44.8268599
+      }
+    },
+    {
+      "ident": "CUBPK53",
+      "nom": "Parc Relais Quatre Chemins",
+      "etat": "LIBRE",
+      "total": 396,
+      "libres": 222,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.6458586,
+        "lat": 44.8315424
+      }
+    },
+    {
+      "ident": "CUBPK42",
+      "nom": "Parc Relais Arts Et Metiers",
+      "etat": "LIBRE",
+      "total": 590,
+      "libres": 66,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6007667,
+        "lat": 44.8060586
+      }
+    },
+    {
+      "ident": "CUBPK91",
+      "nom": "Parc Relais Villenave Pyrenees",
+      "etat": "LIBRE",
+      "total": 753,
+      "libres": 524,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.5641665,
+        "lat": 44.7744313
+      }
+    },
+    {
+      "ident": "CUBPK44",
+      "nom": "Parc Relais Brandenburg",
+      "etat": "LIBRE",
+      "total": 211,
+      "libres": 51,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.5444684,
+        "lat": 44.8753791
+      }
+    },
+    {
+      "ident": "CUBPK14",
+      "nom": "Bord'Eau Village",
+      "etat": "LIBRE",
+      "total": 540,
+      "libres": 96,
+      "mdate": "2026-10-21T14:33:20+00:00",
+      "geo_point_2d": {
+        "lon": -0.5630087,
+        "lat": 44.8557026
+      }
+    },
+    {
+      "ident": "CUBPK95",
+      "nom": "Grand Parc",
+      "etat": "LIBRE",
+      "total": 468,
+      "libres": 303,
+      "mdate": "2026-10-21T14:34:06+00:00",
+      "geo_point_2d": {
+        "lon": -0.5785125,
+        "lat": 44.8631962
+      }
+    },
+    {
+      "ident": "CUBPK97",
+      "nom": "Parc Relais Cantinolle",
+      "etat": "LIBRE",
+      "total": 620,
+      "libres": 530,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.669668,
+        "lat": 44.8918038
+      }
+    },
+    {
+      "ident": "CUBPK98",
+      "nom": "Parc Relais  Hippodrome",
+      "etat": "LIBRE",
+      "total": 250,
+      "libres": 118,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6270837,
+        "lat": 44.8742948
+      }
+    },
+    {
+      "ident": "CUBPK60",
+      "nom": "Parc Relais Gare De Begles",
+      "etat": "FERME",
+      "total": 193,
+      "libres": 193,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.5527252,
+        "lat": 44.7974714
+      }
+    },
+    {
+      "ident": "CUBPK72",
+      "nom": "Begles Les Secheries",
+      "etat": "LIBRE",
+      "total": 399,
+      "libres": 226,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5397772,
+        "lat": 44.807671
+      }
+    },
+    {
+      "ident": "CUBPK76",
+      "nom": "Parc Relais Gare De Blanquefort",
+      "etat": "LIBRE",
+      "total": 206,
+      "libres": 92,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6220381,
+        "lat": 44.9189434
+      }
+    },
+    {
+      "ident": "CUBPK16",
+      "nom": "Victor Hugo",
+      "etat": "LIBRE",
+      "total": 634,
+      "libres": 229,
+      "mdate": "2026-10-21T14:34:04+00:00",
+      "geo_point_2d": {
+        "lon": -0.5721457,
+        "lat": 44.8351304
+      }
+    },
+    {
+      "ident": "CUBPK34",
+      "nom": "Huit Mai 45",
+      "etat": "LIBRE",
+      "total": 399,
+      "libres": 139,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5857737,
+        "lat": 44.8362853
+      }
+    },
+    {
+      "ident": "CUBPK26",
+      "nom": "Republique",
+      "etat": "LIBRE",
+      "total": 361,
+      "libres": 78,
+      "mdate": "2026-10-21T14:32:58+00:00",
+      "geo_point_2d": {
+        "lon": -0.5800428,
+        "lat": 44.8345879
+      }
+    },
+    {
+      "ident": "CUBPK54",
+      "nom": "Parc Relais Ravezies Le Bouscat",
+      "etat": "LIBRE",
+      "total": 366,
+      "libres": 69,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.5762883,
+        "lat": 44.8670739
+      }
+    },
+    {
+      "ident": "CUBPK77",
+      "nom": "Parc Relais Gare De Bruges",
+      "etat": "LIBRE",
+      "total": 58,
+      "libres": 42,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6111779,
+        "lat": 44.8882273
+      }
+    },
+    {
+      "ident": "CUBPK57",
+      "nom": "Parc Relais Le Haillan Rostand",
+      "etat": "LIBRE",
+      "total": 204,
+      "libres": 179,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6682423,
+        "lat": 44.8592522
+      }
+    },
+    {
+      "ident": "CUBPK50",
+      "nom": "Parc Relais La Gardette Sud",
+      "etat": "LIBRE",
+      "total": 151,
+      "libres": 120,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.5179124,
+        "lat": 44.8881184
+      }
+    },
+    {
+      "ident": "CUBPK51",
+      "nom": "Parc Relais Lauriers",
+      "etat": "LIBRE",
+      "total": 149,
+      "libres": 107,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.518605,
+        "lat": 44.8787981
+      }
+    },
+    {
+      "ident": "CUBPK43",
+      "nom": "Parc Relais Bougnard",
+      "etat": "LIBRE",
+      "total": 180,
+      "libres": 109,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6350514,
+        "lat": 44.7936623
+      }
+    },
+    {
+      "ident": "CUBPK56",
+      "nom": "Parc Relais Unitec",
+      "etat": "LIBRE",
+      "total": 218,
+      "libres": 147,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6219984,
+        "lat": 44.7942149
+      }
+    },
+    {
+      "ident": "CUBPK59",
+      "nom": "Parc Relais Gare De Pessac Alouette",
+      "etat": "LIBRE",
+      "total": 148,
+      "libres": 148,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6569533,
+        "lat": 44.7933143
+      }
+    },
+    {
+      "ident": "CUBPK88",
+      "nom": "Parc Relais Cap Metiers",
+      "etat": "LIBRE",
+      "total": 146,
+      "libres": 144,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6506672,
+        "lat": 44.7884435
+      }
+    },
+    {
+      "ident": "CUBPK58",
+      "nom": "Parc Relais Les Pins",
+      "etat": "LIBRE",
+      "total": 220,
+      "libres": 206,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6594896,
+        "lat": 44.8562762
+      }
+    },
+    {
+      "ident": "CUBPK27",
+      "nom": "Cite Mondiale",
+      "etat": "LIBRE",
+      "total": 394,
+      "libres": 39,
+      "mdate": "2026-10-21T14:33:00+00:00",
+      "geo_point_2d": {
+        "lon": -0.5703787,
+        "lat": 44.8496312
+      }
+    },
+    {
+      "ident": "CUBPK33",
+      "nom": "Gare Saint Jean",
+      "etat": "LIBRE",
+      "total": 450,
+      "libres": 146,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5573939,
+        "lat": 44.8261756
+      }
+    },
+    {
+      "ident": "CUBPK35",
+      "nom": "Porte De Bordeaux",
+      "etat": "LIBRE",
+      "total": 390,
+      "libres": 123,
+      "mdate": "2026-10-21T14:32:57+00:00",
+      "geo_point_2d": {
+        "lon": -0.5978106,
+        "lat": 44.8330679
+      }
+    },
+    {
+      "ident": "CUBPK18",
+      "nom": "Allees De Chartres",
+      "etat": "LIBRE",
+      "total": 481,
+      "libres": 8,
+      "mdate": "2026-10-21T14:33:46+00:00",
+      "geo_point_2d": {
+        "lon": -0.5729482,
+        "lat": 44.8464297
+      }
+    },
+    {
+      "ident": "CUBPK55",
+      "nom": "Parc Relais Stalingrad",
+      "etat": "LIBRE",
+      "total": 120,
+      "libres": 3,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.5569718,
+        "lat": 44.8382624
+      }
+    },
+    {
+      "ident": "CUBPK48",
+      "nom": "Parc Relais Galin",
+      "etat": "LIBRE",
+      "total": 279,
+      "libres": 238,
+      "mdate": "2026-10-21T14:32:18+00:00",
+      "geo_point_2d": {
+        "lon": -0.5464421,
+        "lat": 44.8494494
+      }
+    },
+    {
+      "ident": "CUBPK36",
+      "nom": "Bergonie",
+      "etat": "LIBRE",
+      "total": 46,
+      "libres": 0,
+      "mdate": "2026-10-21T14:33:53+00:00",
+      "geo_point_2d": {
+        "lon": -0.5793829,
+        "lat": 44.8239922
+      }
+    },
+    {
+      "ident": "CUBPK73",
+      "nom": "Beaujon",
+      "etat": "LIBRE",
+      "total": 92,
+      "libres": 29,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.5928029,
+        "lat": 44.853986
+      }
+    },
+    {
+      "ident": "CUBPK78",
+      "nom": "Paludate - Saint Jean",
+      "etat": "LIBRE",
+      "total": 370,
+      "libres": 76,
+      "mdate": "2026-10-21T14:33:03+00:00",
+      "geo_point_2d": {
+        "lon": -0.5535744,
+        "lat": 44.8295686
+      }
+    },
+    {
+      "ident": "CUBPK52",
+      "nom": "Parc Relais Les Aubiers",
+      "etat": "LIBRE",
+      "total": 234,
+      "libres": 189,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.575195,
+        "lat": 44.8731899
+      }
+    },
+    {
+      "ident": "CUBPK25",
+      "nom": "Pey Berland - Saint Christoly",
+      "etat": "LIBRE",
+      "total": 600,
+      "libres": 101,
+      "mdate": "2026-10-21T14:34:01+00:00",
+      "geo_point_2d": {
+        "lon": -0.576216,
+        "lat": 44.8379111
+      }
+    },
+    {
+      "ident": "CUBPK115",
+      "nom": "Parc Relais Caroline Aigle, Merignac",
+      "etat": "LIBRE",
+      "total": 103,
+      "libres": 88,
+      "mdate": "2026-10-21T14:32:38+00:00",
+      "geo_point_2d": {
+        "lon": -0.6881081,
+        "lat": 44.834021
+      }
+    }
+  ]
+}
