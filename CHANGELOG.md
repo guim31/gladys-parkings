@@ -10,6 +10,8 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-21
+
 ### Added
 
 - Live free spaces of the public car parks of Strasbourg, Bordeaux Métropole,
@@ -28,3 +30,6 @@ the notes of the version's GitHub Release.
   ready to send.
 - "Status" configuration action: cities read, last readings and errors.
 - Texts and documentation in English, French, German and Spanish.
+
+[Unreleased]: https://github.com/guim31/gladys-parkings/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/guim31/gladys-parkings/releases/tag/v1.0.0
