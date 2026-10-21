@@ -23,6 +23,8 @@ const chosenIds = (value) =>
 export const SCENE_ACTIONS = {
   async find_best(service, { fields }) {
     const language = service.config.language;
+    // Asked right at start: the first reading, not "nothing free".
+    await service.firstReading();
     const watched = service.watched().map((entry) => entry.deviceId);
     if (watched.length === 0) {
       throw new SceneError(say(TEXT, language, 'noParking'));

@@ -192,6 +192,18 @@ export class Parkings {
     return at === null ? Infinity : Math.max(0, this.now() - at);
   }
 
+  /** Waits for the first reading (at most `ms`), for a widget or a scene action asked at start. */
+  async firstReading(ms = 10000) {
+    let timer;
+    await Promise.race([
+      this.loading,
+      new Promise((resolve) => {
+        timer = setTimeout(resolve, ms);
+      }),
+    ]);
+    clearTimeout(timer);
+  }
+
   isStale(city, reading) {
     return this.ageMs(city, reading) > STALE_MS;
   }
@@ -286,10 +298,9 @@ export class Parkings {
         });
       return this.refreshing;
     }
-    // A forced discovery asked during a refresh runs right after it.
-    return discover
-      ? this.refreshing.then(() => this.publishDiscovered({ force: true }))
-      : this.refreshing;
+    // A discovery asked during a refresh (cities just ticked) reads again
+    // right after it: the running one may not include the new cities.
+    return discover ? this.refreshing.then(() => this.refresh({ discover })) : this.refreshing;
   }
 
   async refreshAll(forceDiscovery) {
@@ -359,7 +370,11 @@ export class Parkings {
       const before = previous.get(after.id);
       // Only a created device can be picked by a scene; an out of date count
       // is not news either.
-      if (!before || !created.has(deviceId) || this.isStale(city, after)) {
+      const staleBefore =
+        before?.updatedAt !== null &&
+        before?.updatedAt !== undefined &&
+        city.previousOkAt - before.updatedAt > STALE_MS;
+      if (!before || !created.has(deviceId) || this.isStale(city, after) || staleBefore) {
         continue;
       }
       events.push(...this.parkingEvents(city, deviceId, before, after));
@@ -381,14 +396,18 @@ export class Parkings {
     if (before.open === 1 && after.open === 0) {
       events.push({ key: TRIGGERS.CLOSED, data });
     }
-    const counted = (r) => r.free !== null && r.open !== 0;
-    if (!counted(before) || !counted(after)) {
+    // A closing is the "closed" event alone; a reopening counts from zero.
+    if (after.free === null || after.open === 0) {
+      return events;
+    }
+    const from = before.open === 0 ? 0 : before.free;
+    if (from === null) {
       return events;
     }
     for (const threshold of THRESHOLDS) {
-      if (before.free > threshold && after.free <= threshold) {
+      if (from > threshold && after.free <= threshold) {
         events.push({ key: TRIGGERS.FREE_LOW, data: { ...data, threshold: String(threshold) } });
-      } else if (before.free <= threshold && after.free > threshold) {
+      } else if (from <= threshold && after.free > threshold) {
         events.push({ key: TRIGGERS.FREE_BACK, data: { ...data, threshold: String(threshold) } });
       }
     }
@@ -428,6 +447,9 @@ export class Parkings {
     }
     if (this.isStale(city, reading)) {
       return say(TEXT, language, 'stale');
+    }
+    if (reading.free === 0) {
+      return say(TEXT, language, 'full');
     }
     return say(TEXT, language, 'counts', reading);
   }

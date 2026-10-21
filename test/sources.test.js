@@ -175,3 +175,22 @@ test('int and time helpers', () => {
   assert.equal(time(1792592940000), 1792592940000);
   assert.equal(time('n/a'), null);
 });
+
+test('Grenoble: a failing list read keeps the list already known', async () => {
+  const network = createFetch();
+  const cache = {};
+  await SOURCES.grenoble.read(network.fetch, cache, FIXTURE_TIME);
+  network.routes[urlOf('grenoble-list.json')] = 503;
+  const readings = await SOURCES.grenoble.read(network.fetch, cache, FIXTURE_TIME + 25 * 3600e3);
+  assert.equal(readings.length, 71);
+});
+
+test('a blank position is no position', async () => {
+  const network = createFetch();
+  const url = urlOf('poitiers.json');
+  const document = structuredClone(network.routes[url]);
+  document.results[0]._geopoint = '';
+  network.routes[url] = document;
+  const parks = await read('poitiers', network);
+  assert.equal(parks.get(String(document.results[0].Id)).lat, null);
+});

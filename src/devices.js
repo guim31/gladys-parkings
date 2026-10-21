@@ -138,15 +138,19 @@ export function buildParkingDevice(gladys, sourceKey, source, reading, language)
 
 /**
  * The states of a car park device. A value the portal does not give (no live
- * count, no capacity) is not published: the last known one stays.
+ * count, no capacity) is not published: the last known one stays. A closed
+ * car park has 0 free spaces and is 100 % taken.
  * @param {number} ageMinutes
  */
 export function parkingStates(gladys, sourceKey, source, reading, ageMinutes) {
   const ids = gladys.externalIds(PARKING_TYPE, parkingPlatformId(sourceKey, reading.id));
+  // A closed car park has no space to offer, whatever its counter says
+  // (Strasbourg and Bordeaux keep the last count of a closed one).
+  const closed = reading.open === 0;
   const values = {
-    free: reading.free,
+    free: closed ? 0 : reading.free,
     total: reading.total,
-    occupancy: occupancy(reading),
+    occupancy: closed && reading.total ? 100 : occupancy(reading),
     open: reading.open,
     age: Math.min(MAX_AGE_MINUTES, Math.max(0, Math.floor(ageMinutes))),
   };

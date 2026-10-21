@@ -68,7 +68,7 @@ Cada aparcamiento añadido es un dispositivo de solo lectura:
 
 | Función             | Tipo Gladys        | Valor                                                             |
 | ------------------- | ------------------ | ----------------------------------------------------------------- |
-| Plazas libres       | contador           | plazas disponibles según el operador                              |
+| Plazas libres       | contador           | plazas disponibles según el operador, 0 si está cerrado           |
 | Plazas totales      | contador           | capacidad anunciada                                               |
 | Ocupación           | nivel (%)          | parte de las plazas ocupadas, de 0 a 100                          |
 | Abierto             | binario            | 1 abierto, 0 cerrado o solo abonados (según la ciudad, más abajo) |

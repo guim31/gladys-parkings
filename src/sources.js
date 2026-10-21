@@ -44,7 +44,9 @@ export function time(value) {
   return Number.isFinite(ms) && ms > 0 ? ms : null;
 }
 
-const coord = (value) => (Number.isFinite(Number(value)) ? Number(value) : null);
+const finite = (value) => (Number.isFinite(Number(value)) ? Number(value) : null);
+const coord = (value) =>
+  value === null || value === undefined || String(value).trim() === '' ? null : finite(value);
 
 /** Every record of an Opendatasoft Explore v2.1 dataset, page after page. */
 async function odsRecords(fetch, base, dataset, query = {}) {
@@ -263,7 +265,8 @@ export const SOURCES = {
 
   // data.mobilites-m.fr (SMMAG, Grenoble area): the list of car parks
   // (names, capacities) and their live counts, two documents. Most car parks
-  // of the list have no sensor (null counts): only the counted ones are kept.
+  // of the list have no sensor (null counts): they are not offered in the
+  // Discover tab. A failing list read keeps the list already known.
   grenoble: {
     name: 'Grenoble (M réso)',
     publisher: 'SMMAG – Mobilités M',
@@ -271,27 +274,33 @@ export const SOURCES = {
     hasOpen: false,
     async read(fetch, cache, now) {
       if (!cache.list || now - cache.listAt > LIST_MAX_AGE_MS) {
-        const list = await getJson(
-          fetch,
-          'https://data.mobilites-m.fr/api/findType/json?types=parking',
-          {
-            maxBytes: MAX_BODY_BYTES,
-          },
-        );
-        cache.list = new Map(
-          (Array.isArray(list?.features) ? list.features : [])
-            .filter((f) => f?.properties?.code)
-            .map((f) => [
-              String(f.properties.code),
-              {
-                name: f.properties.nom,
-                total: int(f.properties.nb_places),
-                lon: f.geometry?.coordinates?.[0],
-                lat: f.geometry?.coordinates?.[1],
-              },
-            ]),
-        );
-        cache.listAt = now;
+        try {
+          const list = await getJson(
+            fetch,
+            'https://data.mobilites-m.fr/api/findType/json?types=parking',
+            { maxBytes: MAX_BODY_BYTES },
+          );
+          cache.list = new Map(
+            (Array.isArray(list?.features) ? list.features : [])
+              .filter((f) => f?.properties?.code)
+              .map((f) => [
+                String(f.properties.code),
+                {
+                  name: f.properties.nom,
+                  total: int(f.properties.nb_places),
+                  lon: f.geometry?.coordinates?.[0],
+                  lat: f.geometry?.coordinates?.[1],
+                },
+              ]),
+          );
+          cache.listAt = now;
+        } catch (err) {
+          if (!cache.list) {
+            throw err;
+          }
+          // The list already known is still good: tried again in an hour.
+          cache.listAt = now - LIST_MAX_AGE_MS + 3600 * 1000;
+        }
       }
       const counts = await getJson(fetch, 'https://data.mobilites-m.fr/api/dyn/parking/json', {
         maxBytes: MAX_BODY_BYTES,

@@ -65,7 +65,7 @@ Each car park added is a read-only device:
 
 | Feature      | Gladys type        | Value                                                               |
 | ------------ | ------------------ | ------------------------------------------------------------------- |
-| Free spaces  | counter            | spaces available according to the operator                          |
+| Free spaces  | counter            | spaces available according to the operator, 0 when closed           |
 | Total spaces | counter            | announced capacity                                                  |
 | Occupancy    | level (%)          | share of the spaces taken, 0 to 100                                 |
 | Open         | binary             | 1 open, 0 closed or subscribers only (depending on the city, below) |

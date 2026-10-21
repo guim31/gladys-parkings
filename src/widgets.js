@@ -27,7 +27,8 @@ export function parkingColor(service, city, reading) {
   return taken !== null && taken >= 80 ? WIDGET_COLORS.WARNING : WIDGET_COLORS.SUCCESS;
 }
 
-function parkingsContent(service, { settings, language }) {
+async function parkingsContent(service, { settings, language }) {
+  await service.firstReading();
   const ttl = Math.max(60, service.config.refreshSeconds);
   const watched = service.watched();
   const chosen = Array.isArray(settings?.parkings) ? settings.parkings.map(String) : [];

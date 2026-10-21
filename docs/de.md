@@ -66,7 +66,7 @@ Jedes hinzugefügte Parkhaus ist ein schreibgeschütztes Gerät:
 
 | Funktion        | Gladys-Typ      | Wert                                                              |
 | --------------- | --------------- | ----------------------------------------------------------------- |
-| Freie Plätze    | Zähler          | verfügbare Plätze laut Betreiber                                  |
+| Freie Plätze    | Zähler          | verfügbare Plätze laut Betreiber, 0 wenn geschlossen              |
 | Plätze gesamt   | Zähler          | angegebene Kapazität                                              |
 | Belegung        | Füllstand (%)   | Anteil der belegten Plätze, 0 bis 100                             |
 | Geöffnet        | binär           | 1 geöffnet, 0 geschlossen oder nur für Abonnenten (je nach Stadt) |

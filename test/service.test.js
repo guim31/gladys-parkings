@@ -272,3 +272,57 @@ test('a count dated in the portal more than 30 minutes ago is out of date', asyn
   // Old news: no trigger.
   assert.deepEqual(world.fake.sceneEvents, []);
 });
+
+test('review fixes: a reopening fires "free spaces back", a closed car park has 0 free', async (t) => {
+  const world = await createWorld({ config: { cities: ['bordeaux'] } });
+  t.after(() => world.app.stop());
+  const device = await create(world, 'Grand Parc');
+  setRecords(world, 'bordeaux.json', (r) => r.nom === 'Grand Parc', { etat: 'FERME' });
+  await cycle(world);
+  assert.deepEqual(
+    world.fake.sceneEvents.map((e) => e.key),
+    [TRIGGERS.CLOSED],
+  );
+  assert.equal(world.fake.lastState(featureId(device, 'free')), 0);
+  assert.equal(world.fake.lastState(featureId(device, 'occupancy')), 100);
+  setRecords(world, 'bordeaux.json', (r) => r.nom === 'Grand Parc', { etat: 'LIBRE' });
+  await cycle(world);
+  const back = world.fake.sceneEvents.slice(1);
+  assert.ok(back.length > 0 && back.every((e) => e.key === TRIGGERS.FREE_BACK));
+});
+
+test('review fixes: no trigger when the previous count was already out of date', async (t) => {
+  const world = await createWorld();
+  t.after(() => world.app.stop());
+  await create(world, 'Feydeau');
+  const old = new Date(world.clock.now() - STALE_MS - 60000).toISOString();
+  setRecords(world, 'nantes.json', FEYDEAU, { grp_horodatage: old });
+  await cycle(world);
+  setRecords(world, 'nantes.json', FEYDEAU, {
+    grp_horodatage: new Date(world.clock.now()).toISOString(),
+    grp_disponible: 3,
+  });
+  await cycle(world);
+  assert.deepEqual(world.fake.sceneEvents, []);
+});
+
+test('review fixes: a city ticked while a reading runs is read right after it', async (t) => {
+  const world = await createWorld();
+  t.after(() => world.app.stop());
+  const url = urlOf('nantes.json');
+  const saved = world.network.routes[url];
+  let release;
+  const gate = new Promise((resolve) => {
+    release = resolve;
+  });
+  world.network.routes[url] = async () => {
+    await gate;
+    return saved;
+  };
+  const running = world.service.refresh();
+  const reconfigured = world.fake.configUpdated({ cities: ['nantes', 'poitiers'] });
+  release();
+  await running;
+  await reconfigured;
+  assert.ok(world.fake.discoveredDevices.some((d) => d.name.startsWith('Grand Poitiers')));
+});

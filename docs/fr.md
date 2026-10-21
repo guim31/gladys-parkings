@@ -65,7 +65,7 @@ Chaque parking ajouté est un appareil en lecture seule :
 
 | Fonctionnalité    | Type Gladys     | Valeur                                                              |
 | ----------------- | --------------- | ------------------------------------------------------------------- |
-| Places libres     | compteur        | places disponibles selon l'exploitant                               |
+| Places libres     | compteur        | places disponibles selon l'exploitant, 0 si fermé                   |
 | Places totales    | compteur        | capacité annoncée                                                   |
 | Taux d'occupation | niveau (%)      | part des places occupées, de 0 à 100                                |
 | Ouvert            | binaire         | 1 ouvert, 0 fermé ou réservé aux abonnés (selon la ville, ci-après) |
