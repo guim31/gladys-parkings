@@ -1,0 +1,178 @@
+# Parkhäuser in Echtzeit
+
+Die **freien Plätze öffentlicher Parkhäuser** mehrerer französischer Städte, live aus ihren Open-Data-
+Portalen gelesen: Straßburg, Bordeaux Métropole, Nantes Métropole, Rennes (Parkhäuser von Citédia und
+P+R-Plätze des STAR-Netzes), der Großraum Grenoble und Grand Poitiers. **Kein Konto, kein Schlüssel.**
+
+Inoffizielle Integration, ohne Verbindung zu den Städten, Metropolen oder Parkhausbetreibern.
+Ohne die Hardware entwickelt: Die Quellen wurden am 21.10.2026 live geprüft, Rückmeldungen sind
+willkommen.
+
+## Was du bekommst
+
+- Ein **Gerät pro Parkhaus**, das du hinzufügst: freie Plätze, Plätze gesamt, Belegung, geöffnet
+  oder geschlossen (je nach Stadt) und Alter der Daten.
+- Ein **Widget** „Parkhäuser“: deine Parkhäuser mit je einer Zeile, grün, orange oder rot je nach
+  Belegung.
+- Vier **Szenen-Auslöser**: freie Plätze unter einer Schwelle, freie Plätze wieder über einer
+  Schwelle, Parkhaus voll, Parkhaus geschlossen.
+- Eine **Szenen-Aktion**: unter deinen Parkhäusern das geöffnete mit den meisten freien Plätzen
+  finden, mit einem fertigen Satz zum Versenden.
+
+## Voraussetzungen
+
+- Gladys Assistant **5.1.0** oder neuer.
+- Internetzugang von Gladys aus: Die Daten stammen aus den Open-Data-Portalen der Städte.
+- Kein Konto, kein API-Schlüssel.
+
+## Installation
+
+1. Öffne in Gladys **Integrationen → Von GitHub installieren**.
+2. Füge die Adresse `https://github.com/guim31/gladys-parkings` ein und bestätige.
+3. Öffne die Integration nach der Installation: Der Tab **Konfiguration** erscheint.
+
+## Konfiguration
+
+### Einstellungen
+
+| Einstellung                       | Wirkung                                                                   |
+| --------------------------------- | ------------------------------------------------------------------------- |
+| Städte                            | die Städte, deren Parkhäuser im Tab „Entdecken“ angeboten werden          |
+| Aktualisierung                    | alle 2, 3 (Standard) oder 5 Minuten                                       |
+| Sprache der Namen und Nachrichten | Sprache der Funktionsnamen, des Widgets und der Szenensätze (Französisch) |
+
+Die Funktionsnamen werden beim Hinzufügen eines Geräts festgelegt: Wähle die Sprache vorher.
+
+### Parkhäuser hinzufügen
+
+1. Kreuze eine oder mehrere Städte an und speichere.
+2. Öffne den Tab **Entdecken**: Alle Parkhäuser dieser Städte mit Live-Zählung erscheinen dort als
+   „Stadt · Parkhaus“.
+3. Füge die gewünschten zu Gladys hinzu. Deren Werte kommen sofort an.
+
+Die hinzugefügten Parkhäuser sind die **überwachten Parkhäuser**: Widget, Auslöser und
+Szenen-Aktion bieten sie an. Ein hinzugefügtes Parkhaus wird weiter gelesen, auch wenn du seine
+Stadt danach abwählst.
+
+### Prüfen
+
+Die Aktion **Status** im Tab „Konfiguration“ listet die gelesenen Städte, die Zahl der Parkhäuser
+mit Live-Zählung, die Zeit der letzten Abfrage, den letzten Fehler und die Zahl der hinzugefügten
+Parkhäuser.
+
+## Geräte
+
+Jedes hinzugefügte Parkhaus ist ein schreibgeschütztes Gerät:
+
+| Funktion        | Gladys-Typ      | Wert                                                              |
+| --------------- | --------------- | ----------------------------------------------------------------- |
+| Freie Plätze    | Zähler          | verfügbare Plätze laut Betreiber                                  |
+| Plätze gesamt   | Zähler          | angegebene Kapazität                                              |
+| Belegung        | Füllstand (%)   | Anteil der belegten Plätze, 0 bis 100                             |
+| Geöffnet        | binär           | 1 geöffnet, 0 geschlossen oder nur für Abonnenten (je nach Stadt) |
+| Alter der Daten | Dauer (Minuten) | Alter der Zählung                                                 |
+
+Die Funktion **Geöffnet** gibt es nur für Städte, die den Zustand ihrer Parkhäuser veröffentlichen:
+Straßburg, Bordeaux, Nantes und Rennes. Grenoble und Poitiers veröffentlichen ihn nicht.
+
+Das **Alter der Daten** beginnt bei der Zeit, die die Stadt angibt (Bordeaux, Nantes, STAR,
+Grenoble, Poitiers), sonst bei der letzten erfolgreichen Abfrage (Straßburg, Citédia). Es wächst,
+wenn das Portal nicht mehr antwortet: Nach **30 Minuten** gelten die Daten als **veraltet**.
+
+## Dashboard-Widget
+
+Füge das Widget **Parkhäuser** zu einem Dashboard hinzu. Es zeigt eine Zeile pro überwachtem
+Parkhaus (höchstens zehn), zum Beispiel „Feydeau — 165 / 490 frei“. In den Widget-Einstellungen
+kannst du die angezeigten Parkhäuser wählen; leer zeigt es alle.
+
+Farben: **grün** bis 80 % Belegung, **orange** von 80 bis 95 %, **rot** darüber oder wenn der
+Betreiber das Parkhaus als voll meldet, **grau**, wenn es geschlossen ist, keine Live-Zählung hat
+oder die Daten veraltet sind.
+
+## Szenen-Auslöser
+
+| Auslöser                  | Tritt ein, wenn                                                         |
+| ------------------------- | ----------------------------------------------------------------------- |
+| Freie Plätze werden knapp | die freien Plätze auf die gewählte Schwelle fallen (5, 10, 20, 50, 100) |
+| Wieder freie Plätze       | die freien Plätze über die gewählte Schwelle steigen                    |
+| Parkhaus voll             | kein Platz mehr frei, oder voll laut Betreiber (Schwelle von Nantes)    |
+| Parkhaus geschlossen      | das Parkhaus schließt (Städte, die den Zustand veröffentlichen)         |
+
+Das Feld **Parkhäuser** filtert die betroffenen Parkhäuser; leer gilt jedes überwachte Parkhaus.
+Die Variablen für die folgenden Aktionen: Parkhaus, Stadt, freie Plätze, Plätze gesamt, Belegung.
+
+Die Auslöser vergleichen zwei aufeinanderfolgende Abfragen: Nichts wird ausgelöst, wenn ein Portal
+nach einem Ausfall zurückkommt, und nichts bei veralteten Daten.
+
+## Szenen-Aktion
+
+**Parkhaus mit den meisten freien Plätzen finden**: unter deinen überwachten Parkhäusern (oder den
+gewählten) das geöffnete mit aktueller Zählung und den meisten freien Plätzen. Ergebnisse:
+
+- `found`: 1, wenn ein Parkhaus gefunden wurde, sonst 0 (zum Prüfen mit „Nur fortfahren, wenn“);
+- `sentence`: „Feydeau: 165 freie Plätze von 490.“ oder „Kein überwachtes Parkhaus hat gerade einen
+  freien Platz.“;
+- `parking_name`, `city`, `free`, `total`, `occupancy`.
+
+Der Satz folgt der in der Konfiguration gewählten Sprache.
+
+## Szenenbeispiele
+
+- **Vor der Fahrt in die Innenstadt**: Auslöser „Kalender“ oder ein Knopf, Aktion „Parkhaus mit den
+  meisten freien Plätzen finden“, dann „Nachricht senden“ mit `sentence`.
+- **Bahnhofsparkhaus fast voll**: Auslöser „Freie Plätze werden knapp“ (Bahnhofsparkhaus, Schwelle 20) an einem Werktagmorgen, dann eine Benachrichtigung „Fahr früher los oder nimm die Tram“.
+- **P+R-Platz wieder frei**: Auslöser „Wieder freie Plätze“ (Schwelle 50) auf deinem P+R-Platz,
+  dann eine Nachricht.
+
+## Daten und Aktualisierung
+
+| Stadt            | Portal                                        | Zeit angegeben | Zustand offen/zu |
+| ---------------- | --------------------------------------------- | -------------- | ---------------- |
+| Straßburg        | data.strasbourg.eu (Opendatasoft)             | nein           | ja               |
+| Bordeaux         | opendata.bordeaux-metropole.fr (Opendatasoft) | ja             | ja               |
+| Nantes           | data.nantesmetropole.fr (Opendatasoft)        | ja             | ja               |
+| Rennes (Citédia) | data.rennesmetropole.fr (Opendatasoft)        | nein           | ja               |
+| Rennes (STAR)    | data.explore.star.fr (Opendatasoft)           | ja             | ja               |
+| Grenoble         | data.mobilites-m.fr (API Mobilités M)         | ja             | nein             |
+| Poitiers         | data.grandpoitiers.fr (Data Fair)             | ja             | nein             |
+
+Eine Anfrage pro Stadt und Abfrage (zwei für Grenoble, dessen Parkhausliste nur einmal am Tag neu
+gelesen wird), einige Dutzend Kilobyte. Bei 2 Minuten sind das 720 Anfragen pro Tag und Stadt, weit
+unter den Kontingenten der Portale für anonyme Nutzung. Gelesen werden nur die angekreuzten Städte
+und die der hinzugefügten Parkhäuser.
+
+Bordeaux: Nur die „verbundenen“ Parkhäuser (Live-Zählung) werden angeboten. STAR: Gezählt werden
+die normalen Plätze (ohne Fahrgemeinschafts-, Elektro- und Behindertenplätze).
+
+## Fehlerbehebung
+
+- **Kein Parkhaus in „Entdecken“**: Prüfe, ob eine Stadt angekreuzt und gespeichert ist, und starte
+  die Aktion **Status**. Ein Fehler „HTTP 503“ oder „timeout“ kommt vom Portal der Stadt: Versuche
+  es später erneut.
+- **„Daten veraltet“ im Widget**: Das Portal antwortet seit mehr als 30 Minuten nicht oder
+  aktualisiert dieses Parkhaus nicht mehr. Der angezeigte Wert ist der letzte bekannte.
+- **Ein Parkhaus fehlt**: Es hat keine Live-Zählung (keine oder defekte Sensoren). Es erscheint,
+  sobald die Stadt eine Zählung veröffentlicht.
+- **Keine Funktion „Geöffnet“**: Die Stadt veröffentlicht den Zustand ihrer Parkhäuser nicht
+  (Grenoble, Poitiers).
+- Für mehr Details setze `LOG_LEVEL=debug`: Jede Abfrage wird dann protokolliert.
+
+## Einschränkungen
+
+- Nur die aufgeführten Städte werden unterstützt. **Toulouse** veröffentlicht nur statische Daten
+  (Kapazitäten, Tarife), ohne freie Plätze. **Lyon** veröffentlicht die freien Plätze der
+  LPA-Parkhäuser ohne ihre Kapazität, **Angers** ebenso; **Montpellier** war während der Tests
+  nicht erreichbar; für Lille und Metz wurde kein öffentlicher Datenstrom mehr gefunden: Diese
+  Städte können hinzukommen, wenn ihre Daten es erlauben.
+- Die Zahlen stammen von den Betreibern, die sie alle ein bis fünf Minuten aktualisieren, und
+  können von der Anzeige an der Einfahrt abweichen.
+- Nur Lesen: keine Reservierung, keine Zahlung.
+
+## Danksagung
+
+- Daten: Eurométropole de Strasbourg, Bordeaux Métropole, Nantes Métropole, Rennes Métropole und
+  STAR, SMMAG – Mobilités M, Grand Poitiers, unter ihren jeweiligen offenen Lizenzen (Licence
+  Ouverte / ODbL).
+- Gleicher Zweck wie Parkhaus-Integrationen der Home-Assistant-Community (kein Code übernommen).
+- Erstellt aus der offiziellen
+  [Integrationsvorlage](https://github.com/GladysAssistant/integration-template-js).

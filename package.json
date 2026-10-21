@@ -1,8 +1,8 @@
 {
-  "name": "gladys-integration-template-js",
+  "name": "gladys-parkings",
   "version": "1.0.0",
   "private": true,
-  "description": "Official starter template to build an external integration for Gladys Assistant with the JavaScript SDK.",
+  "description": "Gladys Assistant integration: live free spaces of the public car parks of French cities, from their open data portals.",
   "type": "module",
   "main": "index.js",
   "scripts": {

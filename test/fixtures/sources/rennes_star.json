@@ -1,0 +1,109 @@
+{
+  "total_count": 8,
+  "results": [
+    {
+      "idparc": "CVI",
+      "nom": "Cesson-Viasilva",
+      "coordonnees": {
+        "lon": -1.620879,
+        "lat": 48.13259
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 801,
+      "jrdinfosoliste": 338,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    },
+    {
+      "idparc": "HFR",
+      "nom": "Henri Fréville",
+      "coordonnees": {
+        "lon": -1.674555,
+        "lat": 48.087537
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 384,
+      "jrdinfosoliste": 61,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    },
+    {
+      "idparc": "JFK",
+      "nom": "J.F. Kennedy",
+      "coordonnees": {
+        "lon": -1.713631,
+        "lat": 48.12108
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 367,
+      "jrdinfosoliste": 0,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    },
+    {
+      "idparc": "LGA",
+      "nom": "Les Gayeulles",
+      "coordonnees": {
+        "lon": -1.657108,
+        "lat": 48.129565
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 373,
+      "jrdinfosoliste": 232,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    },
+    {
+      "idparc": "POT",
+      "nom": "La Poterie",
+      "coordonnees": {
+        "lon": -1.64342,
+        "lat": 48.08682
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 640,
+      "jrdinfosoliste": 136,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    },
+    {
+      "idparc": "PRE",
+      "nom": "Les Préales",
+      "coordonnees": {
+        "lon": -1.64025,
+        "lat": 48.11356
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 263,
+      "jrdinfosoliste": 235,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    },
+    {
+      "idparc": "SJG",
+      "nom": "Saint-Jacques - Gaîté",
+      "coordonnees": {
+        "lon": -1.703637,
+        "lat": 48.091038
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 717,
+      "jrdinfosoliste": 280,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    },
+    {
+      "idparc": "VU",
+      "nom": "Villejean-Université",
+      "coordonnees": {
+        "lon": -1.704182,
+        "lat": 48.121906
+      },
+      "lastupdate": "2026-10-21T14:35:00+00:00",
+      "capacitesoliste": 356,
+      "jrdinfosoliste": 56,
+      "etatouverture": "OUVERT",
+      "etatremplissage": "LIBRE"
+    }
+  ]
+}

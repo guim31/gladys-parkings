@@ -1,0 +1,10 @@
+{
+  "https://data.strasbourg.eu/api/explore/v2.1/catalog/datasets/occupation-parkings-temps-reel/records?limit=100&offset=0": "strasbourg.json",
+  "https://opendata.bordeaux-metropole.fr/api/explore/v2.1/catalog/datasets/st_park_p/records?where=connecte%3D1&select=ident%2Cnom%2Cetat%2Ctotal%2Clibres%2Cmdate%2Cgeo_point_2d&limit=100&offset=0": "bordeaux.json",
+  "https://data.nantesmetropole.fr/api/explore/v2.1/catalog/datasets/244400404_parkings-publics-nantes-disponibilites/records?limit=100&offset=0": "nantes.json",
+  "https://data.rennesmetropole.fr/api/explore/v2.1/catalog/datasets/export-api-parking-citedia/records?select=id%2Ckey%2Cstatus%2Cmax%2Cfree%2Cgeo&limit=100&offset=0": "rennes.json",
+  "https://data.explore.star.fr/api/explore/v2.1/catalog/datasets/tco-parcsrelais-star-etat-tr/records?select=idparc%2Cnom%2Ccoordonnees%2Clastupdate%2Ccapacitesoliste%2Cjrdinfosoliste%2Cetatouverture%2Cetatremplissage&limit=100&offset=0": "rennes_star.json",
+  "https://data.mobilites-m.fr/api/findType/json?types=parking": "grenoble-list.json",
+  "https://data.mobilites-m.fr/api/dyn/parking/json": "grenoble-counts.json",
+  "https://data.grandpoitiers.fr/data-fair/api/v1/datasets/mobilites-stationnement-des-parkings-en-temps-reel/lines?size=100": "poitiers.json"
+}

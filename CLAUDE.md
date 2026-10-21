@@ -31,16 +31,21 @@ pushing.
 ## Architecture
 
 ```
-index.js                          SDK wiring only: handlers registered before connect()
-src/devices/index.js              registry of the device blueprints + dispatch helpers
-src/devices/<type>.js             one device type per file (buildDevice, onPoll, onSetValue...)
-src/scenes.js                     scene action handlers (manifest `scene_actions`)
-src/widgets.js                    dashboard widget handlers (manifest `widgets`)
+index.js                          SDK wiring only: registerHandlers() then connect()
+src/app.js                        every SDK handler -> service; configuration action
+src/service.js                    cities read, timer, discovery, states, triggers, status
+src/sources.js                    one adapter per open data portal -> common reading
+src/devices.js                    the Gladys device of a car park, its states
+src/scenes.js                     scene action handler (manifest `scene_actions`)
+src/widgets.js                    dashboard widget handler (manifest `widgets`)
+src/http.js                       downloads: timeouts, size caps
+src/messages.js                   texts sent from the container (en, fr, de, es)
 src/config.js                     DEFAULT_CONFIG (mirrors the manifest defaults) + normalization
-src/weather.js                    example driver (Open-Meteo)
-gladys-assistant-integration.json manifest: name, config_schema, actions, image...
-docs/en.md, docs/fr.md            user documentation, re-hosted by Gladys (mandatory)
+gladys-assistant-integration.json manifest: config, action, widget, scene triggers and action
+docs/{en,fr,de,es}.md             user documentation, re-hosted by Gladys (en and fr mandatory)
 test/                             node --test, against the SDK's fake Gladys (integration-sdk/testing)
+test/helpers/world.js             fake Gladys + fake fetch on the fixtures + manual clock
+test/fixtures/sources             real answers of the seven portals (2026-10-21), index.json = URL -> file
 .github/scripts/release.mjs       release helpers (manifest bump, changelog), tested in test/
 ```
 
@@ -70,8 +75,9 @@ test/                             node --test, against the SDK's fake Gladys (in
   `type: "provider"`: 5.1.0). `test/manifest.test.js` ties the manifest to the
   code (defaults, action, scene and widget handlers): change both sides
   together.
-- **User-facing text** is bilingual (English and French): action messages,
-  manifest texts, and `docs/en.md` / `docs/fr.md`, kept in sync.
+- **User-facing text** is in English, French, German and Spanish: action
+  messages, manifest texts, feature names, and `docs/{en,fr,de,es}.md`, kept
+  in sync (`test/i18n.test.js`).
 - **Style.** Prettier formats, ESLint catches mistakes. Comments explain why,
   in English. Tests never touch the network.
 
@@ -233,3 +239,35 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
 - Docs `en`, `fr`, `de`, `es` avec les mêmes sections.
 - Chauffe, ouverture, sécurité : ne rien rendre pilotable « comme un thermostat » ou par un assistant
   vocal quand une erreur serait dangereuse (leçon d'OctoPrint).
+
+# Intégration Parkings (notes de développement, 21/10/2026)
+
+## Sources vérifiées en direct (21/10/2026)
+
+| Clé (figée)   | Portail                                                           | Particularités                                       |
+| ------------- | ----------------------------------------------------------------- | ---------------------------------------------------- |
+| `strasbourg`  | data.strasbourg.eu `occupation-parkings-temps-reel` (ODS)         | pas de date ; `etat` 1 ouvert, 2 fermé, 0 inconnu    |
+| `bordeaux`    | opendata.bordeaux-metropole.fr `st_park_p` (ODS)                  | filtrer `connecte=1` ; `etat` LIBRE/COMPLET/FERME    |
+| `nantes`      | data.nantesmetropole.fr `…parkings-publics-nantes-disponibilites` | `grp_statut` 5/2/1/0 ; `grp_complet` = seuil complet |
+| `rennes`      | data.rennesmetropole.fr `export-api-parking-citedia` (ODS)        | pas de date ; `status` OUVERT/FERME                  |
+| `rennes_star` | data.explore.star.fr `tco-parcsrelais-star-etat-tr` (ODS)         | compteurs « soliste » = places ordinaires            |
+| `grenoble`    | data.mobilites-m.fr `findType` + `dyn/parking`                    | 71 parkings, 26 comptés ; pas d'état ; date en ms    |
+| `poitiers`    | data.grandpoitiers.fr Data Fair `…parkings-en-temps-reel/lines`   | date dans `Dernière_mise_à_jour_Base` ; pas d'état   |
+
+Écartées : Toulouse (statique), Lyon LPA et Angers (places libres sans capacité), Montpellier
+(`portail-api-data.montpellier3m.fr` en 503 pendant les tests), Lille et Metz (plus de flux trouvé).
+
+## Choix et pièges
+
+- Pas de liste dynamique dans un formulaire de config (`source` ne connaît que `devices` et
+  `houses`) : on coche les villes, et **l'onglet Découverte sert de liste des parkings**. Les
+  parkings « suivis » sont les appareils créés (`gladys.devices`) : pas de fichier sous `/data`.
+- Une ville décochée reste lue tant qu'un de ses parkings est ajouté (`activeKeys`).
+- Strasbourg répond en gzip même sans `Accept-Encoding` : `fetch` de Node le gère, `curl` sans
+  `--compressed` non.
+- Âge = date du portal, sinon dernière lecture réussie ; périmé au-delà de 30 min (`STALE_MS`).
+- Déclencheurs : comparaison de deux lectures successives rapprochées (pas après une panne), un
+  événement par seuil franchi ; `full` utilise le drapeau de l'exploitant (Bordeaux, STAR) ou
+  `grp_complet` (Nantes), sinon 0 place.
+- `max` des compteurs : capacité arrondie à la centaine supérieure, pour qu'une capacité qui bouge
+  de quelques places ne change pas la structure de l'appareil.

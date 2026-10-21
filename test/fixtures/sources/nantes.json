@@ -1,0 +1,383 @@
+{
+  "total_count": 27,
+  "results": [
+    {
+      "grp_identifiant": 1,
+      "grp_nom": "FEYDEAU",
+      "grp_statut": 5,
+      "grp_disponible": 171,
+      "grp_exploitation": 490,
+      "grp_complet": 10,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Parvis Neptune",
+      "location": {
+        "lon": -1.552558781065703,
+        "lat": 47.21407529472319
+      }
+    },
+    {
+      "grp_identifiant": 9,
+      "grp_nom": "CITE INT DES CONGRES",
+      "grp_statut": 5,
+      "grp_disponible": 373,
+      "grp_exploitation": 439,
+      "grp_complet": 10,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Avenue Jean Claude Bonduelle",
+      "location": {
+        "lon": -1.5439712738984481,
+        "lat": 47.2129016651793
+      }
+    },
+    {
+      "grp_identifiant": 34,
+      "grp_nom": "GARE SUD 4",
+      "grp_statut": 5,
+      "grp_disponible": 256,
+      "grp_exploitation": 330,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "24 Mail Pablo Picasso",
+      "location": {
+        "lon": -1.5379338929841764,
+        "lat": 47.21510335976384
+      }
+    },
+    {
+      "grp_identifiant": 2,
+      "grp_nom": "DECRE - BOUFFAY",
+      "grp_statut": 5,
+      "grp_disponible": 177,
+      "grp_exploitation": 394,
+      "grp_complet": 10,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "18 Rue du Moulin",
+      "location": {
+        "lon": -1.5540046292504972,
+        "lat": 47.216662613183885
+      }
+    },
+    {
+      "grp_identifiant": 3,
+      "grp_nom": "TOUR BRETAGNE",
+      "grp_statut": 5,
+      "grp_disponible": 346,
+      "grp_exploitation": 643,
+      "grp_complet": 10,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "4 Place de Bretagne",
+      "location": {
+        "lon": -1.5582500168918192,
+        "lat": 47.21784288795037
+      }
+    },
+    {
+      "grp_identifiant": 4,
+      "grp_nom": "GRASLIN",
+      "grp_statut": 5,
+      "grp_disponible": 164,
+      "grp_exploitation": 455,
+      "grp_complet": 6,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue Scribe",
+      "location": {
+        "lon": -1.5625718137430404,
+        "lat": 47.2143102053585
+      }
+    },
+    {
+      "grp_identifiant": 5,
+      "grp_nom": "ARISTIDE BRIAND",
+      "grp_statut": 5,
+      "grp_disponible": 196,
+      "grp_exploitation": 303,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Place Aristide Briand",
+      "location": {
+        "lon": -1.5629364155817649,
+        "lat": 47.217093597901226
+      }
+    },
+    {
+      "grp_identifiant": 10,
+      "grp_nom": "CATHEDRALE",
+      "grp_statut": 5,
+      "grp_disponible": 39,
+      "grp_exploitation": 258,
+      "grp_complet": 0,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue Sully",
+      "location": {
+        "lon": -1.5510561654614727,
+        "lat": 47.22081334425927
+      }
+    },
+    {
+      "grp_identifiant": 11,
+      "grp_nom": "LES MACHINES",
+      "grp_statut": 5,
+      "grp_disponible": 397,
+      "grp_exploitation": 397,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue Arthur III",
+      "location": {
+        "lon": -1.5627277898724061,
+        "lat": 47.20590061614064
+      }
+    },
+    {
+      "grp_identifiant": 15,
+      "grp_nom": "HOTEL DIEU",
+      "grp_statut": 5,
+      "grp_disponible": 13,
+      "grp_exploitation": 100,
+      "grp_complet": 5,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Chaussée de la Madeleine",
+      "location": {
+        "lon": -1.5519831099609056,
+        "lat": 47.211057080450736
+      }
+    },
+    {
+      "grp_identifiant": 16,
+      "grp_nom": "GARE SUD-LIMITE 1H",
+      "grp_statut": 5,
+      "grp_disponible": 37,
+      "grp_exploitation": 60,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Quai Malakoff",
+      "location": {
+        "lon": -1.5405805815658893,
+        "lat": 47.21370471058834
+      }
+    },
+    {
+      "grp_identifiant": 21,
+      "grp_nom": "GARE NORD",
+      "grp_statut": 5,
+      "grp_disponible": 195,
+      "grp_exploitation": 540,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Cours John Kennedy",
+      "location": {
+        "lon": -1.5449843310082838,
+        "lat": 47.21668903410084
+      }
+    },
+    {
+      "grp_identifiant": 27,
+      "grp_nom": "GARE SUD 3",
+      "grp_statut": 5,
+      "grp_disponible": 228,
+      "grp_exploitation": 379,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "32 Rue du Pré Gauchet",
+      "location": {
+        "lon": -1.5392563084462647,
+        "lat": 47.21491533439512
+      }
+    },
+    {
+      "grp_identifiant": 35,
+      "grp_nom": "BACO 1",
+      "grp_statut": 5,
+      "grp_disponible": 50,
+      "grp_exploitation": 92,
+      "grp_complet": 3,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Allée Baco",
+      "location": {
+        "lon": -1.5489888254435977,
+        "lat": 47.21433241531008
+      }
+    },
+    {
+      "grp_identifiant": 37,
+      "grp_nom": "GLORIETTE 2",
+      "grp_statut": 5,
+      "grp_disponible": 35,
+      "grp_exploitation": 87,
+      "grp_complet": 7,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue Albert de Mun",
+      "location": {
+        "lon": -1.5602843655802539,
+        "lat": 47.210273681361414
+      }
+    },
+    {
+      "grp_identifiant": 42,
+      "grp_nom": "CHU 2",
+      "grp_statut": 5,
+      "grp_disponible": 4,
+      "grp_exploitation": 61,
+      "grp_complet": 0,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Quai Moncousu",
+      "location": {
+        "lon": -1.5529138839211876,
+        "lat": 47.20889024774273
+      }
+    },
+    {
+      "grp_identifiant": 47,
+      "grp_nom": "LES NEFS",
+      "grp_statut": 0,
+      "grp_disponible": 0,
+      "grp_exploitation": 0,
+      "grp_complet": 0,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "61 Boulevard de la Prairie au Duc",
+      "location": {
+        "lon": -1.5632873817591502,
+        "lat": 47.204092541956626
+      }
+    },
+    {
+      "grp_identifiant": 6,
+      "grp_nom": "MEDIATHEQUE",
+      "grp_statut": 5,
+      "grp_disponible": 254,
+      "grp_exploitation": 398,
+      "grp_complet": 10,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue Neuve des Capucins",
+      "location": {
+        "lon": -1.5623381737543782,
+        "lat": 47.21087082120933
+      }
+    },
+    {
+      "grp_identifiant": 7,
+      "grp_nom": "COMMERCE",
+      "grp_statut": 5,
+      "grp_disponible": 232,
+      "grp_exploitation": 406,
+      "grp_complet": 7,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Place du Commerce",
+      "location": {
+        "lon": -1.557713217159592,
+        "lat": 47.2131202800862
+      }
+    },
+    {
+      "grp_identifiant": 8,
+      "grp_nom": "TALENSAC",
+      "grp_statut": 5,
+      "grp_disponible": 184,
+      "grp_exploitation": 320,
+      "grp_complet": 9,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue Le Nôtre",
+      "location": {
+        "lon": -1.5583572970724853,
+        "lat": 47.22025597434886
+      }
+    },
+    {
+      "grp_identifiant": 12,
+      "grp_nom": "DESCARTES",
+      "grp_statut": 5,
+      "grp_disponible": 208,
+      "grp_exploitation": 251,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue Descartes",
+      "location": {
+        "lon": -1.564364526212151,
+        "lat": 47.217188847954716
+      }
+    },
+    {
+      "grp_identifiant": 17,
+      "grp_nom": "CHU",
+      "grp_statut": 5,
+      "grp_disponible": 51,
+      "grp_exploitation": 135,
+      "grp_complet": 8,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Quai de Tourville",
+      "location": {
+        "lon": -1.5572502317729704,
+        "lat": 47.20936196559804
+      }
+    },
+    {
+      "grp_identifiant": 25,
+      "grp_nom": "GARE SUD 1",
+      "grp_statut": 5,
+      "grp_disponible": 93,
+      "grp_exploitation": 380,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue de Lourmel",
+      "location": {
+        "lon": -1.5410368260441125,
+        "lat": 47.21614962929036
+      }
+    },
+    {
+      "grp_identifiant": 29,
+      "grp_nom": "BELLAMY",
+      "grp_statut": 5,
+      "grp_disponible": 76,
+      "grp_exploitation": 76,
+      "grp_complet": 5,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Impasse de la Courtine",
+      "location": {
+        "lon": -1.5576936898606668,
+        "lat": 47.22236040909734
+      }
+    },
+    {
+      "grp_identifiant": 36,
+      "grp_nom": "BACO 2",
+      "grp_statut": 5,
+      "grp_disponible": 23,
+      "grp_exploitation": 118,
+      "grp_complet": 10,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Allée Baco",
+      "location": {
+        "lon": -1.5516042545448998,
+        "lat": 47.21315097438518
+      }
+    },
+    {
+      "grp_identifiant": 40,
+      "grp_nom": "FONDERIES",
+      "grp_statut": 5,
+      "grp_disponible": 96,
+      "grp_exploitation": 130,
+      "grp_complet": 10,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Rue de la Porte Gellée",
+      "location": {
+        "lon": -1.5443329511381525,
+        "lat": 47.204970459088806
+      }
+    },
+    {
+      "grp_identifiant": 44,
+      "grp_nom": "GARE SUD 2",
+      "grp_statut": 5,
+      "grp_disponible": 386,
+      "grp_exploitation": 457,
+      "grp_complet": 2,
+      "grp_horodatage": "2026-10-21T14:34:40+00:00",
+      "adresse": "Boulevard de Berlin",
+      "location": {
+        "lon": -1.5363160630555566,
+        "lat": 47.21698117112644
+      }
+    }
+  ]
+}
