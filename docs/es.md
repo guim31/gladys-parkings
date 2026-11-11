@@ -22,7 +22,7 @@ pero sus comentarios son bienvenidos.
 
 ## Requisitos
 
-- Gladys Assistant **5.1.0** o posterior.
+- Gladys Assistant **5.3.0** o posterior.
 - Acceso a Internet desde Gladys: los datos vienen de los portales de datos abiertos de las
   ciudades.
 - Ninguna cuenta, ninguna clave de API.

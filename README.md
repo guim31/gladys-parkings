@@ -23,7 +23,7 @@ User documentation: [English](docs/en.md) · [français](docs/fr.md) ·
 | Scene action         | find the open car park with the most free spaces: a sentence and numbers                   |
 | Configuration action | status: cities read, last readings, errors                                                 |
 
-Requires Gladys **5.1.0** or later.
+Requires Gladys **5.3.0** or later.
 
 ## Installation
 
