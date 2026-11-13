@@ -21,7 +21,7 @@ le 21/10/2026, mais vos retours sont les bienvenus.
 
 ## Prérequis
 
-- Gladys Assistant **5.1.0** ou plus récent.
+- Gladys Assistant **5.3.0** ou plus récent.
 - Un accès à Internet depuis Gladys : les données viennent des portails open data des villes.
 - Aucun compte, aucune clé d'API.
 
